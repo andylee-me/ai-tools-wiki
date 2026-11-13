@@ -1,8 +1,8 @@
-# 生成式 AI 工具圖鑑 — CLAUDE.md
+# Claude Code Skill 百科 — CLAUDE.md
 
 ## 專案目的
 
-本網站是一個收錄各種生成式 AI 工具的靜態百科網站，以統一格式介紹每款工具，讓讀者快速了解工具的用途、優缺點與使用場景。目標受眾為對 AI 工具有興趣的一般使用者與學習者。
+本網站是一個收錄 Claude Code 實用 Skill 的靜態百科網站，以統一格式介紹每款 Skill 的功能、使用時機與操作步驟，幫助使用者快速找到並學會使用各種 Skill 指令。
 
 ## 技術規格
 
@@ -10,125 +10,140 @@
 - 不使用 React、Vue、Angular 或任何前端框架
 - 不引入外部 CSS 框架（如 Bootstrap、Tailwind）
 - 支援 GitHub Pages 部署
-- 所有路徑使用相對路徑（以 index.html 為根）
+- 所有路徑使用相對路徑
 
 ## 目錄結構
 
 ```
 /
 ├── CLAUDE.md              ← 本文件（專案規則）
-├── index.html             ← 首頁（工具總覽）
+├── index.html             ← 首頁（所有 Skill 分類總覽）
 ├── styles/
 │   └── main.css           ← 全站共用樣式
-├── tools/
-│   ├── _template.html     ← 工具頁面模板（新增工具時複製此檔）
-│   ├── chatgpt.html
-│   ├── claude.html
-│   └── midjourney.html
-└── assets/
-    └── img/               ← 工具圖示（可選，命名同工具 slug）
+└── skills/
+    ├── pdf.html
+    ├── code-reviewer.html
+    ├── frontend-design.html
+    ├── diagnose.html
+    └── （新增的 Skill 詳情頁放這裡）
 ```
 
 ## 色彩與設計規範
 
-| 用途       | 色碼       |
-|----------|------------|
-| 頁面背景   | #0f0f1a   |
-| 卡片背景   | rgba(30, 27, 75, 0.6) |
-| 主強調色   | #7c3aed（紫色）|
-| 次強調色   | #06b6d4（青色）|
-| 標題文字   | #f1f5f9   |
-| 內文文字   | #cbd5e1   |
-| 分隔線     | #334155   |
+**整體風格：Warm Editorial Catalog（溫暖編輯風目錄）**
 
-**設計風格：** 科技感、暗色系、玻璃態（Glass Morphism）
-- 卡片使用 `backdrop-filter: blur(10px)` 配合半透明背景
-- 卡片邊框使用 `1px solid rgba(255,255,255,0.1)`
-- Hover 效果：`transform: translateY(-4px)` + 加深陰影
+| 用途             | 色碼                |
+|----------------|---------------------|
+| 頁面背景         | #F5F0E8（暖奶油色） |
+| 卡片背景         | #FEFDFB（近白）     |
+| 主文字           | #231F1B（暖黑）     |
+| 次要文字         | #6B6560             |
+| Accent（連結）   | #B5440F（深橘紅）   |
+| 邊框             | #E5DDD3             |
 
-## 工具分類標籤（僅限以下選項）
+**字型（Google Fonts）：**
+- 標題：DM Serif Display（英文）＋ Noto Serif TC（中文）
+- 內文：Lora ＋ Noto Serif TC
+- 指令標籤：Fira Code
+- UI 文字：Noto Sans TC
 
-| 標籤     | 色碼（徽章背景）|
-|--------|---------------|
-| 文字生成 | #7c3aed      |
-| 圖像生成 | #db2777      |
-| 程式碼助手| #059669      |
-| 語音/影片 | #d97706      |
-| 多模態   | #0891b2      |
+**設計元素：**
+- 卡片左側使用分類色邊框（3px solid）取代圓角玻璃態
+- hover 效果：translateY(-3px) + 加深陰影
+- 無純黑背景，無紫色漸層
 
-嚴禁自行建立未在此列出的分類標籤。
+## Skill 分類系統（僅限以下 7 類）
 
-## 首頁 (index.html) 結構規範
+| 分類        | CSS Class   | 色碼       |
+|-----------|-------------|------------|
+| 文件處理    | c-doc       | #0E6FAD   |
+| 程式碼開發  | c-code      | #1A7A4A   |
+| 介面設計    | c-design    | #BF2558   |
+| AI 整合開發 | c-ai        | #6C3BC5   |
+| 自動化流程  | c-auto      | #0C7272   |
+| 自訂擴充    | c-extend    | #A85A10   |
+| 系統設定    | c-config    | #64748B   |
 
-```html
-<header>  <!-- 固定導覽列：網站標題 + 簡短說明 -->
-<section class="hero">  <!-- Hero 區塊 -->
-  <h1>生成式 AI 工具圖鑑</h1>
-  <p>副標題：收錄 XX 款 AI 工具，幫助你找到最適合的生產力利器</p>
-</section>
-<section class="tools-grid">  <!-- 工具卡片網格 -->
-  <!-- 每個工具一張 .tool-card -->
-</section>
-<footer>  <!-- 頁腳 -->
+嚴禁自行建立未在此列出的分類。
+
+## 首頁 (index.html) 結構
+
+```
+<header class="navbar">
+<section class="hero">          ← 大標題 + 4格統計數字
+<nav class="cat-nav">           ← 分類快速導覽列（sticky）
+<main>
+  <section class="cat-section" id="{分類id}">   ← 每個分類一個 section
+    <div class="cat-header">    ← 分類標題列
+    <div class="skills-grid">   ← 3欄卡片網格
+      <article class="skill-card c-{分類}">      ← 每張卡片
+<footer class="site-footer">
 ```
 
-## 工具卡片規範（index.html 中的每張卡片）
+## Skill 卡片規範（index.html 中）
 
 ```html
-<article class="tool-card">
-  <div class="card-header">
-    <span class="category-badge category-{分類}">分類名稱</span>
+<article class="skill-card c-{分類}">
+  <span class="card-tag c-{分類}">{分類名稱}</span>
+  <h3 class="card-name">{Skill 名稱}</h3>
+  <p class="card-desc">{一句話說明，不超過 50 字}</p>
+  <div class="card-footer">
+    <code class="card-cmd">/{指令}</code>
+    <!-- 有詳情頁時才加 -->
+    <a href="skills/{slug}.html" class="card-link">了解更多 →</a>
   </div>
-  <h3 class="tool-name">工具名稱</h3>
-  <p class="tool-desc">一句話描述（不超過 50 字）</p>
-  <a href="tools/{slug}.html" class="btn-detail">查看詳情 →</a>
 </article>
 ```
 
-## 工具詳情頁 (tools/*.html) 必要區塊
+## Skill 詳情頁 (skills/*.html) 必要區塊
 
-每個工具詳情頁必須包含以下所有區塊，順序固定：
+每個詳情頁必須包含以下所有區塊，順序固定：
 
-1. **Hero 區**：工具名稱（大標題）+ 類別徽章 + 一句話描述
-2. **基本資訊表格**：開發商、發布年份、定價模式、適用平台
-3. **核心功能**：條列式，3-6 項，每項附簡短說明
-4. **優點**：條列式，3-5 項（綠色 ✓ 符號）
-5. **缺點**：條列式，2-4 項（紅色 ✗ 符號）
-6. **適合對象**：2-4 段，說明哪些人最適合使用
-7. **實際應用場景**：2-4 個具體範例，每個有標題與說明
-8. **底部導覽**：「← 返回首頁」按鈕
+1. **Navbar**：同首頁，左上品牌連結回首頁，右側分類 Badge
+2. **Back Bar**：「← 返回首頁」連結
+3. **Skill Hero**（兩欄）：左側標題區 + 右側 Info Panel
+4. **適用時機**：條列式，3-6 項，說明何時該用這個 Skill
+5. **使用方式**：有序步驟列，3-5 步
+6. **使用範例**：1-3 個程式碼區塊（黑色背景，酸綠色指令）
+7. **注意事項**：1-2 個 Tip Box
+8. **相關 Skills**（Aside 側欄）
 
-## 新增工具的完整步驟
+## 新增 Skill 的完整步驟
 
-當收到「新增工具 XXX」指令時，依序執行：
+當收到「新增 Skill XXX」指令時，依序執行：
 
-**Step 1** — 建立工具頁面
-- 複製 `tools/_template.html` 為 `tools/{slug}.html`
-- slug 規則：全小寫英文、空格用 hyphen（例：stable-diffusion.html）
-- 填入所有 8 個必要區塊的內容
+**Step 1 — 建立詳情頁**
+- 在 `skills/` 目錄建立 `{slug}.html`
+- slug 規則：Skill 指令名稱，斜線改連字號（`code-reviewer.html`）
+- 套用對應分類的 CSS 顏色變數（在 `<style>` 標籤內覆寫）
+- 填入所有 8 個必要區塊
 
-**Step 2** — 更新首頁
-- 在 `index.html` 的 `.tools-grid` 區塊末尾新增一張 `.tool-card`
-- 卡片必須包含：正確分類徽章、工具名稱、一句話描述、連到工具頁的按鈕
-- 更新 hero 區的工具數量計數
+**Step 2 — 更新首頁**
+- 在 `index.html` 對應分類的 `.skills-grid` 末尾新增一張 `.skill-card`
+- 加入正確的分類 class（`c-doc`、`c-code` 等）
+- 加入 `<a href="skills/{slug}.html" class="card-link">了解更多 →</a>`
+- 更新 Hero 區的「精選 Skills」數字
 
-**Step 3** — 驗證
-- 確認 `href` 路徑正確
-- 確認使用的分類標籤在規範列表中
+**Step 3 — 驗證**
+- 確認 `href` 路徑正確（詳情頁連到 `skills/`，詳情頁連回 `../index.html`）
+- 確認使用的分類在規範列表中
 
 ## 命名與格式規則
 
-- **檔名**：全小寫，空格用 hyphen
-- **CSS Class**：kebab-case（例：`tool-card`、`category-badge`）
-- **禁止** inline style（除非動態計算無法避免）
-- **語言**：繁體中文；工具名稱保留英文原名；技術術語可英文
-- **段落長度**：每段說明不超過 150 字
-- **禁止**加入真實外部超連結（避免連結失效影響成績）
+- **詳情頁檔名**：Skill 指令名稱，全小寫，斜線改連字號
+  - 例：`/code-reviewer` → `code-reviewer.html`
+  - 例：`/claude-hud:configure` → `claude-hud-configure.html`
+- **CSS Class**：kebab-case
+- **禁止** inline style（除了分類顏色覆寫的 `<style>` 標籤）
+- **語言**：繁體中文；Skill 指令名稱保留英文原名
+- **段落長度**：每段說明不超過 100 字
+- **禁止**加入指向外部網站的 `<a>` 連結
 
 ## 禁止事項
 
-- 不加入指向外部網站的 `<a href="...">` 連結
-- 不引入外部 CDN 資源（字型除外，可用 Google Fonts）
-- 不新增 CLAUDE.md 未定義的分類標籤
-- 不修改 `styles/main.css` 中的 CSS 變數定義（新增可以，但不能刪除既有變數）
-- 不更改已建立工具頁的 URL slug（會破壞既有連結）
+- 不新增 CLAUDE.md 未定義的分類（Class）
+- 不修改 CSS 變數中已定義的分類顏色
+- 不更改已建立詳情頁的 URL slug
+- 不引入外部 CSS 框架或 JS 套件
+- 不使用黑色（#000000 或接近純黑）作為主要背景色
+- 不使用 Inter、Roboto 等泛用字型

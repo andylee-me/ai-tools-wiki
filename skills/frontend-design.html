@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/frontend-design — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-design); }
+    .skill-hero-eyebrow::before { background: var(--c-design); }
+    .info-panel-head { background: var(--c-design); }
+    .section-label { color: var(--c-design); }
+    .section-label::before { background: var(--c-design); }
+    .use-item::before { color: var(--c-design); }
+    .step-item::before { color: var(--c-design); }
+    .tip-box { background: #FDF0F5; border-color: #EBB8CF; border-left-color: var(--c-design); }
+    .tip-label { color: var(--c-design); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-design);">介面設計</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-hero-eyebrow">介面設計 Skill</div>
+      <h1 class="skill-hero-title">前端設計師</h1>
+      <div class="skill-hero-cmd">/frontend-design</div>
+      <p class="skill-hero-desc">
+        生成具有獨特美感的生產級前端介面。這個 Skill 的核心原則是拒絕「AI slop」——
+        不用 Inter、不用紫色漸層、不抄模板。每次生成的設計都應該有清楚的設計觀點與不可複製的視覺個性。
+      </p>
+    </div>
+    <div>
+      <div class="info-panel">
+        <div class="info-panel-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/frontend-design</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">介面設計</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">HTML / CSS / JS</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">支援框架</div>
+          <div class="info-value">React / Vue / Vanilla</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Write, Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 設計哲學 -->
+      <div class="detail-section">
+        <h2 class="section-label">設計哲學</h2>
+        <ul class="use-list">
+          <li class="use-item"><strong>Bold Aesthetic Direction</strong>：每次設計前先確立明確的視覺方向（極簡主義、暴力主義、復古未來、有機自然…），絕不走中間路線。</li>
+          <li class="use-item"><strong>Typography First</strong>：選擇獨特且有個性的字型組合，避免 Inter / Arial / Roboto 等泛用選擇。</li>
+          <li class="use-item"><strong>有意義的動效</strong>：動畫聚焦在高影響力時刻（頁面載入的交錯呈現），而非散落各處的小互動。</li>
+          <li class="use-item"><strong>空間構圖</strong>：非對稱、重疊、斜向流動、打破網格，製造視覺張力。</li>
+          <li class="use-item"><strong>生產等級</strong>：輸出的程式碼可直接部署，不是草稿。</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述你的需求與情境</div>
+              <div class="step-desc">說明要設計什麼（元件、頁面或應用），以及使用情境、目標受眾與任何技術限制。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 確立設計方向</div>
+              <div class="step-desc">Skill 會根據情境選擇一個大膽、具體的設計方向，並解釋為什麼這個方向適合你的需求。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">生成可執行程式碼</div>
+              <div class="step-desc">輸出完整的 HTML/CSS/JS 或 React 元件，所有細節都已實作，包括 hover 效果、RWD 與動畫。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">迭代調整</div>
+              <div class="step-desc">若結果不符合期望，可以告訴 Claude 具體要調整的部分（色調更暗、字型更大、加入更多動效等）。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：設計一個登入頁</div>
+          <div class="code-content">
+<span class="hl">/frontend-design</span>
+<span class="dim">設計一個 SaaS 產品的登入頁，</span>
+<span class="dim">品牌是做 AI 資料分析的，</span>
+<span class="dim">目標受眾是企業財務部門，</span>
+<span class="dim">要有高級感但不要冷漠</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：設計工具卡片元件</div>
+          <div class="code-content">
+<span class="hl">/frontend-design</span>
+<span class="dim">設計一個展示 AI 工具的卡片元件，</span>
+<span class="dim">需要顯示工具名稱、分類標籤、描述、</span>
+<span class="dim">定價資訊，要有強烈的設計個性，</span>
+<span class="dim">不要用卡片圓角過大的設計</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">描述愈具體，結果愈好</div>
+          <div class="tip-text">提供目標受眾、品牌個性、想要的情感（有趣的、嚴肅的、高端的）和任何參考風格，可以大幅提升輸出品質。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">設計複雜度要匹配</div>
+          <div class="tip-text">極簡設計需要精確的間距與排版；極大化設計需要大量動畫與效果程式碼。告知 Claude 你偏好哪個方向，讓複雜度匹配你的需求。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Excalidraw 圖表 <code class="related-cmd">/excalidraw-diagram</code></li>
+          <li class="related-item">Postrboard 設計 <code class="related-cmd">/postrboard</code></li>
+          <li class="related-item">程式碼精簡 <code class="related-cmd">/simplify</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

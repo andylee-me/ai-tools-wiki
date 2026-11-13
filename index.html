@@ -3,166 +3,453 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="收錄精選生成式 AI 工具，以統一格式介紹用途、優缺點與使用場景。">
-  <title>生成式 AI 工具圖鑑</title>
+  <meta name="description" content="精選 Claude Code 實用 Skill 百科，依類別整理 26 款常用技能指令，讓你快速找到所需工具。">
+  <title>Claude Code Skill 百科</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
   <!-- ══ Navbar ══ -->
-  <header class="navbar" role="banner">
+  <header class="navbar">
     <div class="navbar-inner">
-      <div class="navbar-brand">
-        <span class="navbar-wordmark">
-          AI:TOOLS<span class="dim">/INDEX</span>
-          <span class="cursor-blink"></span>
-        </span>
-      </div>
-      <nav class="navbar-nav" aria-label="主要導覽">
-        <a href="index.html">首頁</a>
-        <a href="#tools-list">工具列表</a>
-        <span class="navbar-tag">3 工具</span>
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="#doc">文件處理</a>
+        <a href="#code">程式開發</a>
+        <a href="#design">介面設計</a>
+        <a href="#ai">AI 整合</a>
+        <span class="nav-badge">26 Skills</span>
       </nav>
     </div>
   </header>
 
   <!-- ══ Hero ══ -->
-  <section class="hero" aria-label="網站介紹">
-    <div class="hero-label">ls ./generative-ai-tools --format=wiki</div>
-    <h1 class="hero-title">
-      <span class="line-normal">生成式</span>
-      <span class="line-accent">AI 工具</span>
-      <span class="line-outline">圖鑑</span>
-    </h1>
-    <p class="hero-desc">
-      收錄 3 款主流生成式 AI 工具，以統一格式整理用途、優缺點與實際應用場景，
-      幫助你在眾多 AI 工具中快速做出選擇，提升工作與創作效率。
-    </p>
-    <div class="hero-stats">
-      <div>
-        <span class="hero-stat-num">003</span>
-        <div class="hero-stat-label">收錄工具</div>
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Claude Code</div>
+      <h1 class="hero-title">
+        好用 Skill<br>
+        <em>一頁全覽</em>
+      </h1>
+      <p class="hero-desc">
+        精選 26 款 Claude Code 實用技能指令，依功能分類整理，
+        讓你快速找到適合的工具，省去翻文件的時間。
+      </p>
+    </div>
+    <div class="hero-right">
+      <div class="stat-block">
+        <span class="stat-num">26</span>
+        <span class="stat-label">精選 Skills</span>
       </div>
-      <div>
-        <span class="hero-stat-num">005</span>
-        <div class="hero-stat-label">功能分類</div>
+      <div class="stat-block">
+        <span class="stat-num">7</span>
+        <span class="stat-label">功能分類</span>
       </div>
-      <div>
-        <span class="hero-stat-num">24+</span>
-        <div class="hero-stat-label">應用場景</div>
+      <div class="stat-block">
+        <span class="stat-num">4</span>
+        <span class="stat-label">詳細說明頁</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">延伸可能性</span>
       </div>
     </div>
   </section>
 
-  <!-- ══ Tools ══ -->
-  <main id="tools-list">
-    <hr class="section-rule">
+  <!-- ══ Category Nav ══ -->
+  <nav class="cat-nav" aria-label="分類導覽">
+    <div class="cat-nav-inner">
+      <a href="#doc"    class="cat-nav-link" data-cat="doc">    <span class="cat-dot doc"></span>    文件處理</a>
+      <a href="#code"   class="cat-nav-link" data-cat="code">   <span class="cat-dot code"></span>   程式碼開發</a>
+      <a href="#design" class="cat-nav-link" data-cat="design"> <span class="cat-dot design"></span> 介面設計</a>
+      <a href="#ai"     class="cat-nav-link" data-cat="ai">     <span class="cat-dot ai"></span>     AI 整合開發</a>
+      <a href="#auto"   class="cat-nav-link" data-cat="auto">   <span class="cat-dot auto"></span>   自動化流程</a>
+      <a href="#extend" class="cat-nav-link" data-cat="extend"> <span class="cat-dot extend"></span> 自訂擴充</a>
+      <a href="#config" class="cat-nav-link" data-cat="config"> <span class="cat-dot config"></span> 系統設定</a>
+    </div>
+  </nav>
 
-    <section class="tools-section" aria-label="工具列表">
+  <main>
 
-      <div class="section-label-row">
-        <span class="section-label-text">// 所有工具</span>
-        <div class="filter-wrap" role="group" aria-label="分類篩選">
-          <button class="filter-btn active" data-filter="all">全部</button>
-          <button class="filter-btn" data-filter="text">文字生成</button>
-          <button class="filter-btn" data-filter="image">圖像生成</button>
-          <button class="filter-btn" data-filter="code">程式碼助手</button>
-          <button class="filter-btn" data-filter="multimodal">多模態</button>
-        </div>
+    <!-- ══════════════════════════════════
+         1. 文件處理
+    ══════════════════════════════════ -->
+    <section class="cat-section" id="doc">
+      <div class="cat-header">
+        <div class="cat-stripe doc"></div>
+        <h2 class="cat-title">文件處理</h2>
+        <p class="cat-subtitle">閱讀、建立、轉換各種常見文件格式</p>
+        <span class="cat-count">5 Skills</span>
       </div>
+      <div class="skills-grid">
 
-      <div class="tools-list" id="tools-container">
-
-        <!-- ChatGPT -->
-        <article class="tool-row" data-cats="text code" onclick="location.href='tools/chatgpt.html'">
-          <div class="tool-index">01</div>
-          <div class="tool-main">
-            <div class="tool-name-row">
-              <h3 class="tool-name">ChatGPT</h3>
-              <div class="tool-badges">
-                <span class="badge badge-text">文字生成</span>
-                <span class="badge badge-code">程式碼助手</span>
-              </div>
-            </div>
-            <p class="tool-desc-text">
-              由 OpenAI 開發的對話式 AI，支援多輪對話、程式碼生成、文件撰寫與圖像創作，是目前用戶最廣泛的生成式 AI 助理。
-            </p>
+        <article class="skill-card c-doc">
+          <span class="card-tag c-doc">文件處理</span>
+          <h3 class="card-name">PDF 閱讀助手</h3>
+          <p class="card-desc">閱讀、提取文字、合併與分析 PDF 文件，支援跨頁搜尋、表格提取與摘要生成。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/pdf</code>
+            <a href="skills/pdf.html" class="card-link">了解更多 →</a>
           </div>
-          <a href="tools/chatgpt.html" class="tool-cta" onclick="event.stopPropagation()">
-            查看詳情 <i class="arrow-icon">→</i>
-          </a>
         </article>
 
-        <!-- Claude -->
-        <article class="tool-row" data-cats="text multimodal" onclick="location.href='tools/claude.html'">
-          <div class="tool-index">02</div>
-          <div class="tool-main">
-            <div class="tool-name-row">
-              <h3 class="tool-name">Claude</h3>
-              <div class="tool-badges">
-                <span class="badge badge-text">文字生成</span>
-                <span class="badge badge-multimodal">多模態</span>
-              </div>
-            </div>
-            <p class="tool-desc-text">
-              由 Anthropic 打造，以安全性與長文脈絡理解（200K tokens）見長，擅長深度文件分析、複雜推理與嚴謹的程式碼審查。
-            </p>
+        <article class="skill-card c-doc">
+          <span class="card-tag c-doc">文件處理</span>
+          <h3 class="card-name">Word 文件助手</h3>
+          <p class="card-desc">建立、讀取與編輯 .docx 文件，支援樣式、表格、標題層級與段落格式設定。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/docx</code>
           </div>
-          <a href="tools/claude.html" class="tool-cta" onclick="event.stopPropagation()">
-            查看詳情 <i class="arrow-icon">→</i>
-          </a>
         </article>
 
-        <!-- Midjourney -->
-        <article class="tool-row" data-cats="image" onclick="location.href='tools/midjourney.html'">
-          <div class="tool-index">03</div>
-          <div class="tool-main">
-            <div class="tool-name-row">
-              <h3 class="tool-name">Midjourney</h3>
-              <div class="tool-badges">
-                <span class="badge badge-image">圖像生成</span>
-              </div>
-            </div>
-            <p class="tool-desc-text">
-              頂尖的文字生圖 AI，以獨特的藝術美感與細膩風格輸出聞名，透過 Discord 或 Web 介面即可輸入文字描述生成精緻圖像。
-            </p>
+        <article class="skill-card c-doc">
+          <span class="card-tag c-doc">文件處理</span>
+          <h3 class="card-name">簡報製作助手</h3>
+          <p class="card-desc">建立或解析 PowerPoint 簡報，自動生成投影片架構、標題、內文與條列要點。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/pptx</code>
           </div>
-          <a href="tools/midjourney.html" class="tool-cta" onclick="event.stopPropagation()">
-            查看詳情 <i class="arrow-icon">→</i>
-          </a>
+        </article>
+
+        <article class="skill-card c-doc">
+          <span class="card-tag c-doc">文件處理</span>
+          <h3 class="card-name">試算表助手</h3>
+          <p class="card-desc">讀取與操作 Excel / CSV 資料，進行欄位整理、公式生成與資料清洗。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/xlsx</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-doc">
+          <span class="card-tag c-doc">文件處理</span>
+          <h3 class="card-name">論文解讀助手</h3>
+          <p class="card-desc">以「三層解讀法」深度解析學術論文：一句話總結、結構化拆解、知識卡片提取。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/paper-reader-skill</code>
+          </div>
         </article>
 
       </div>
     </section>
+
+    <!-- ══════════════════════════════════
+         2. 程式碼開發
+    ══════════════════════════════════ -->
+    <section class="cat-section" id="code">
+      <div class="cat-header">
+        <div class="cat-stripe code"></div>
+        <h2 class="cat-title">程式碼開發</h2>
+        <p class="cat-subtitle">審查、優化、除錯，提升程式碼品質</p>
+        <span class="cat-count">4 Skills</span>
+      </div>
+      <div class="skills-grid">
+
+        <article class="skill-card c-code">
+          <span class="card-tag c-code">程式碼開發</span>
+          <h3 class="card-name">程式碼審查</h3>
+          <p class="card-desc">全面審查 TypeScript、Python、Go 等程式碼，涵蓋安全性、效能、最佳實踐與程式碼風格。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/code-reviewer</code>
+            <a href="skills/code-reviewer.html" class="card-link">了解更多 →</a>
+          </div>
+        </article>
+
+        <article class="skill-card c-code">
+          <span class="card-tag c-code">程式碼開發</span>
+          <h3 class="card-name">程式碼精簡</h3>
+          <p class="card-desc">審查已修改的程式碼，找出可重用、品質改善與效率提升的機會，並直接修正。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/simplify</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-code">
+          <span class="card-tag c-code">程式碼開發</span>
+          <h3 class="card-name">深度除錯診斷</h3>
+          <p class="card-desc">系統性診斷難以復現的 Bug：複現 → 最小化 → 假說 → 實測 → 修正 → 迴歸測試。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/diagnose</code>
+            <a href="skills/diagnose.html" class="card-link">了解更多 →</a>
+          </div>
+        </article>
+
+        <article class="skill-card c-code">
+          <span class="card-tag c-code">程式碼開發</span>
+          <h3 class="card-name">架構優化分析</h3>
+          <p class="card-desc">根據領域語言與既有決策，找出程式碼庫的架構改善機會，提出重構方向建議。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/improve-codebase-architecture</code>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         3. 介面設計
+    ══════════════════════════════════ -->
+    <section class="cat-section" id="design">
+      <div class="cat-header">
+        <div class="cat-stripe design"></div>
+        <h2 class="cat-title">介面設計</h2>
+        <p class="cat-subtitle">生產級前端介面與視覺化圖表工具</p>
+        <span class="cat-count">3 Skills</span>
+      </div>
+      <div class="skills-grid">
+
+        <article class="skill-card c-design">
+          <span class="card-tag c-design">介面設計</span>
+          <h3 class="card-name">前端設計師</h3>
+          <p class="card-desc">設計具有獨特美感的生產級前端介面，避免泛用 AI 風格，注重字型、色彩、動效與空間構圖。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/frontend-design</code>
+            <a href="skills/frontend-design.html" class="card-link">了解更多 →</a>
+          </div>
+        </article>
+
+        <article class="skill-card c-design">
+          <span class="card-tag c-design">介面設計</span>
+          <h3 class="card-name">Excalidraw 圖表</h3>
+          <p class="card-desc">生成 Excalidraw 圖表 JSON 檔案，視覺化工作流程、系統架構或概念關係。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/excalidraw-diagram</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-design">
+          <span class="card-tag c-design">介面設計</span>
+          <h3 class="card-name">Postrboard 設計</h3>
+          <p class="card-desc">應用 Postrboard 設計語言進行前端開發，以 Quiet CSS 實現克制、非泛用的視覺風格。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/postrboard</code>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         4. AI 整合開發
+    ══════════════════════════════════ -->
+    <section class="cat-section" id="ai">
+      <div class="cat-header">
+        <div class="cat-stripe ai"></div>
+        <h2 class="cat-title">AI 整合開發</h2>
+        <p class="cat-subtitle">Claude API、MCP、Agent 整合開發工具</p>
+        <span class="cat-count">4 Skills</span>
+      </div>
+      <div class="skills-grid">
+
+        <article class="skill-card c-ai">
+          <span class="card-tag c-ai">AI 整合開發</span>
+          <h3 class="card-name">Claude API 開發</h3>
+          <p class="card-desc">協助使用 Claude API 或 Anthropic SDK 建立 AI 應用，包含 tool use、streaming 等進階功能。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/claude-api</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-ai">
+          <span class="card-tag c-ai">AI 整合開發</span>
+          <h3 class="card-name">MCP 伺服器整合</h3>
+          <p class="card-desc">在 Plugin 中設定 Model Context Protocol 伺服器，連結外部服務並擴充 Claude 的工具能力。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/mcp-integration</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-ai">
+          <span class="card-tag c-ai">AI 整合開發</span>
+          <h3 class="card-name">Agent 開發指南</h3>
+          <p class="card-desc">建立自訂子 Agent，定義 frontmatter、工具清單與使用時機範例，擴充 Claude Code 能力。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/agent-development</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-ai">
+          <span class="card-tag c-ai">AI 整合開發</span>
+          <h3 class="card-name">Codex 任務委派</h3>
+          <p class="card-desc">當 Claude Code 卡關時，將複雜任務委派給 Codex 子流程進行深度調查或第二次實作嘗試。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/codex:rescue</code>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         5. 自動化流程
+    ══════════════════════════════════ -->
+    <section class="cat-section" id="auto">
+      <div class="cat-header">
+        <div class="cat-stripe auto"></div>
+        <h2 class="cat-title">自動化流程</h2>
+        <p class="cat-subtitle">循環任務、排程與對話交接工具</p>
+        <span class="cat-count">4 Skills</span>
+      </div>
+      <div class="skills-grid">
+
+        <article class="skill-card c-auto">
+          <span class="card-tag c-auto">自動化流程</span>
+          <h3 class="card-name">循環任務執行</h3>
+          <p class="card-desc">以指定間隔循環執行某個指令或 Skill，適合定期輪詢狀態或建立監控任務。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/loop</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-auto">
+          <span class="card-tag c-auto">自動化流程</span>
+          <h3 class="card-name">定時排程任務</h3>
+          <p class="card-desc">建立、更新、列出定期執行的遠端 Agent 任務，以 Cron 語法設定自動化排程。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/schedule</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-auto">
+          <span class="card-tag c-auto">自動化流程</span>
+          <h3 class="card-name">對話交接文件</h3>
+          <p class="card-desc">將當前對話壓縮成結構化交接文件，讓另一個 Agent 可以無縫接手繼續執行任務。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/handoff</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-auto">
+          <span class="card-tag c-auto">自動化流程</span>
+          <h3 class="card-name">網路存取工具</h3>
+          <p class="card-desc">所有聯網操作的統一入口，包含搜尋、網頁抓取、登入後操作與社群媒體內容擷取。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/web-access</code>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         6. 自訂擴充
+    ══════════════════════════════════ -->
+    <section class="cat-section" id="extend">
+      <div class="cat-header">
+        <div class="cat-stripe extend"></div>
+        <h2 class="cat-title">自訂擴充</h2>
+        <p class="cat-subtitle">Skill、Hook、Command 開發工具</p>
+        <span class="cat-count">4 Skills</span>
+      </div>
+      <div class="skills-grid">
+
+        <article class="skill-card c-extend">
+          <span class="card-tag c-extend">自訂擴充</span>
+          <h3 class="card-name">Skill 開發指南</h3>
+          <p class="card-desc">建立自訂 Skill 的完整流程，包含 frontmatter 設計、觸發條件描述與 Skill 內容撰寫最佳實踐。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/skill-development</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-extend">
+          <span class="card-tag c-extend">自訂擴充</span>
+          <h3 class="card-name">Hook 開發指南</h3>
+          <p class="card-desc">建立 PreToolUse / PostToolUse / Stop Hook，在工具呼叫前後加入驗證邏輯或自動化行為。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/hook-development</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-extend">
+          <span class="card-tag c-extend">自訂擴充</span>
+          <h3 class="card-name">Slash Command 開發</h3>
+          <p class="card-desc">建立自訂 Slash Command，定義指令參數、frontmatter 格式與組織管理多個指令的最佳實踐。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/command-development</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-extend">
+          <span class="card-tag c-extend">自訂擴充</span>
+          <h3 class="card-name">Plugin 架構指南</h3>
+          <p class="card-desc">建立完整 Plugin 架構，了解 plugin.json 設定、目錄組織與各元件的職責分工。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/plugin-structure</code>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         7. 系統設定
+    ══════════════════════════════════ -->
+    <section class="cat-section" id="config">
+      <div class="cat-header">
+        <div class="cat-stripe config"></div>
+        <h2 class="cat-title">系統設定</h2>
+        <p class="cat-subtitle">設定自動化行為、快捷鍵與 HUD 顯示</p>
+        <span class="cat-count">3 Skills</span>
+      </div>
+      <div class="skills-grid">
+
+        <article class="skill-card c-config">
+          <span class="card-tag c-config">系統設定</span>
+          <h3 class="card-name">自動化行為設定</h3>
+          <p class="card-desc">透過 settings.json Hooks 設定「每次 X 時自動執行 Y」的自動化行為，由 Claude Code 環境執行。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/update-config</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-config">
+          <span class="card-tag c-config">系統設定</span>
+          <h3 class="card-name">快捷鍵設定</h3>
+          <p class="card-desc">自訂鍵盤快捷鍵、重新綁定按鍵、新增 Chord 組合鍵，修改 keybindings.json 配置。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/keybindings-help</code>
+          </div>
+        </article>
+
+        <article class="skill-card c-config">
+          <span class="card-tag c-config">系統設定</span>
+          <h3 class="card-name">HUD 狀態列設定</h3>
+          <p class="card-desc">設定 Claude Code HUD 的顯示選項，包含版面、語言、預設配置與顯示元件的細節調整。</p>
+          <div class="card-footer">
+            <code class="card-cmd">/claude-hud:configure</code>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- ══ Footer ══ -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-brand">
-      <strong>生成式 AI 工具圖鑑</strong>
-      靜態學習資源 · GitHub Pages 部署
-    </div>
-    <div class="footer-copy">
-      © 2024 生成式 AI 工具圖鑑<br>
-      AI:TOOLS/INDEX v1.0
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">
+          精選 26 款實用技能指令 · 靜態學習資源
+        </div>
+      </div>
+      <div class="footer-meta">
+        © 2024 Claude Code Skill 百科<br>
+        GitHub Pages 部署 · 純靜態網站
+      </div>
     </div>
   </footer>
 
-  <script>
-    const btns = document.querySelectorAll('.filter-btn');
-    const rows = document.querySelectorAll('.tool-row');
-
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        btns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        rows.forEach(row => {
-          const cats = row.dataset.cats ? row.dataset.cats.split(' ') : [];
-          row.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
-        });
-      });
-    });
-  </script>
 </body>
 </html>

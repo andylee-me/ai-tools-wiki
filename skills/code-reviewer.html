@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/code-reviewer — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-code); }
+    .skill-hero-eyebrow::before { background: var(--c-code); }
+    .info-panel-head { background: var(--c-code); }
+    .section-label { color: var(--c-code); }
+    .section-label::before { background: var(--c-code); }
+    .use-item::before { color: var(--c-code); }
+    .step-item::before { color: var(--c-code); }
+    .tip-box { background: #EFF9F3; border-color: #B8DEC7; border-left-color: var(--c-code); }
+    .tip-label { color: var(--c-code); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-code);">程式碼開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-hero-eyebrow">程式碼開發 Skill</div>
+      <h1 class="skill-hero-title">程式碼審查</h1>
+      <div class="skill-hero-cmd">/code-reviewer</div>
+      <p class="skill-hero-desc">
+        針對 TypeScript、JavaScript、Python、Swift、Kotlin、Go 進行全面性的程式碼審查，
+        涵蓋安全性漏洞、效能問題、最佳實踐與程式碼風格，並附帶自動化分析與審查清單。
+      </p>
+    </div>
+    <div>
+      <div class="info-panel">
+        <div class="info-panel-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/code-reviewer</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">程式碼開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">支援語言</div>
+          <div class="info-value">TS / JS / Python / Go / Swift / Kotlin</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">審查面向</div>
+          <div class="info-value">安全、效能、風格</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Read, Grep, Bash</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 審查面向 -->
+      <div class="detail-section">
+        <h2 class="section-label">審查涵蓋面向</h2>
+        <ul class="use-list">
+          <li class="use-item"><strong>安全性掃描</strong>：檢查 SQL Injection、XSS、CSRF、不安全的反序列化等 OWASP Top 10 漏洞。</li>
+          <li class="use-item"><strong>效能分析</strong>：找出不必要的重複計算、N+1 查詢、記憶體洩漏與過度的重新渲染。</li>
+          <li class="use-item"><strong>最佳實踐</strong>：確認是否遵循語言慣例、Design Pattern 的正確使用與錯誤處理完整性。</li>
+          <li class="use-item"><strong>程式碼品質</strong>：可讀性、命名清晰度、函數職責單一原則與不必要的複雜度。</li>
+          <li class="use-item"><strong>測試覆蓋率</strong>：評估現有測試是否充足，並建議補充哪些邊界案例。</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">指定要審查的檔案或範圍</div>
+              <div class="step-desc">可以指定單一檔案、目錄或 Git diff，例如「審查 src/auth/ 目錄下的所有檔案」。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">說明審查重點（可選）</div>
+              <div class="step-desc">如果有特別關注的面向（如「這段程式碼會處理用戶密碼，請特別關注安全性」），可以額外說明。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">取得結構化審查報告</div>
+              <div class="step-desc">Claude 以嚴重程度分級（Critical / Major / Minor）整理問題清單，並附上修正建議與程式碼範例。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">追問或要求自動修正</div>
+              <div class="step-desc">可以針對特定問題深入討論，或要求 Claude 直接修正某些問題（建議先從 Critical 問題開始）。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：審查特定檔案</div>
+          <div class="code-content">
+<span class="hl">/code-reviewer</span>
+<span class="dim">審查 src/api/auth.ts，這個檔案</span>
+<span class="dim">處理使用者登入，請特別關注</span>
+<span class="dim">安全性問題</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：審查 PR 改動</div>
+          <div class="code-content">
+<span class="hl">/code-reviewer</span>
+<span class="dim">審查這個 PR 的所有改動，</span>
+<span class="dim">先列出 Critical 問題，</span>
+<span class="dim">然後再列 Minor 建議</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">先修 Critical 再修 Minor</div>
+          <div class="tip-text">審查結果會分成不同嚴重程度，建議優先解決安全漏洞（Critical）再處理程式碼風格（Minor），避免修改優先順序混亂。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">搭配 /simplify 使用</div>
+          <div class="tip-text">Code Review 完成並修正問題後，可以再跑一次 /simplify 確認修改後的程式碼沒有引入新的複雜度。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">程式碼精簡 <code class="related-cmd">/simplify</code></li>
+          <li class="related-item">深度除錯診斷 <code class="related-cmd">/diagnose</code></li>
+          <li class="related-item">架構優化分析 <code class="related-cmd">/improve-codebase-architecture</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

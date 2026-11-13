@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/diagnose — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-code); }
+    .skill-hero-eyebrow::before { background: var(--c-code); }
+    .info-panel-head { background: var(--c-code); }
+    .section-label { color: var(--c-code); }
+    .section-label::before { background: var(--c-code); }
+    .use-item::before { color: var(--c-code); }
+    .step-item::before { color: var(--c-code); }
+    .tip-box { background: #EFF9F3; border-color: #B8DEC7; border-left-color: var(--c-code); }
+    .tip-label { color: var(--c-code); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-code);">程式碼開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-hero-eyebrow">程式碼開發 Skill</div>
+      <h1 class="skill-hero-title">深度除錯診斷</h1>
+      <div class="skill-hero-cmd">/diagnose</div>
+      <p class="skill-hero-desc">
+        針對難以復現的 Bug、效能回退與神秘崩潰，採用嚴格的診斷循環：
+        複現 → 最小化 → 建立假說 → 加入觀測點 → 修正 → 迴歸測試。
+        適合那種「跑了三遍才觸發一次」的惡夢級 Bug。
+      </p>
+    </div>
+    <div>
+      <div class="info-panel">
+        <div class="info-panel-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/diagnose</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">程式碼開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">適用情境</div>
+          <div class="info-value">難以復現的 Bug</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">診斷流程</div>
+          <div class="info-value">6 步驟循環</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Bash, Read, Grep</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">Bug 無法穩定復現，只在特定條件下出現</li>
+          <li class="use-item">效能在某次版本更新後突然下降，原因不明</li>
+          <li class="use-item">程式在生產環境崩潰，但本機無法重現</li>
+          <li class="use-item">已嘗試多種修法但問題仍未解決，需要全面重新診斷</li>
+          <li class="use-item">Race condition 或並發相關的不穩定問題</li>
+        </ul>
+      </div>
+
+      <!-- 診斷流程 -->
+      <div class="detail-section">
+        <h2 class="section-label">六步驟診斷循環</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">複現（Reproduce）</div>
+              <div class="step-desc">建立穩定的復現步驟，確認 Bug 的觸發條件。若無法穩定復現，先找出是否有共同的環境或狀態條件。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">最小化（Minimise）</div>
+              <div class="step-desc">逐步移除不相關的程式碼，建立最小可復現案例（Minimal Reproducible Example），縮小問題範圍。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">建立假說（Hypothesise）</div>
+              <div class="step-desc">根據最小案例，提出 2-3 個可能的根本原因假說，以可驗證的方式描述每個假說。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">加入觀測點（Instrument）</div>
+              <div class="step-desc">加入 logging、breakpoint 或斷言，針對假說進行實測，確認或排除每個可能原因。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">修正（Fix）</div>
+              <div class="step-desc">確認根本原因後實施修正，同時移除診斷過程中加入的臨時觀測程式碼。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">迴歸測試（Regression Test）</div>
+              <div class="step-desc">為這個 Bug 新增測試案例，確保相同問題不會在未來版本中再次出現。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：診斷間歇性崩潰</div>
+          <div class="code-content">
+<span class="hl">/diagnose</span>
+<span class="dim">我的應用每隔幾小時會隨機崩潰，</span>
+<span class="dim">錯誤訊息是 "Cannot read properties</span>
+<span class="dim">of undefined (reading 'userId')"，</span>
+<span class="dim">但在開發環境無法重現，</span>
+<span class="dim">只有在生產環境多用戶並發時才會發生</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">提供越多背景越好</div>
+          <div class="tip-text">描述 Bug 時，提供錯誤訊息、stack trace、發生頻率、最近的程式碼改動，以及任何你已嘗試過的修法，幫助 Claude 快速鎖定方向。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">卡關時換 /codex:rescue</div>
+          <div class="tip-text">如果 /diagnose 六步驟跑完仍未找到根因，可以試試 /codex:rescue，將問題委派給 Codex 進行更深入的第二輪調查。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">程式碼審查 <code class="related-cmd">/code-reviewer</code></li>
+          <li class="related-item">程式碼精簡 <code class="related-cmd">/simplify</code></li>
+          <li class="related-item">Codex 任務委派 <code class="related-cmd">/codex:rescue</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

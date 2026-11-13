@@ -338,11 +338,16 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   gap: 0;
   border-top: 4px solid;
-  transition: background 160ms;
+  transition: background 180ms, transform 180ms, box-shadow 180ms;
   position: relative;
 }
 
-.skill-card:hover { background: #FDFAF6; }
+.skill-card:hover {
+  background: #FDFAF6;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(30,26,22,0.13);
+  z-index: 1;
+}
 
 .skill-card.c-doc    { border-top-color: var(--c-doc); }
 .skill-card.c-code   { border-top-color: var(--c-code); }

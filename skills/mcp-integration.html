@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/mcp-integration — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #6C3BC5; }
+    .section-label::before { background: #6C3BC5; }
+    .use-item::before { color: #6C3BC5; }
+    .step-item::before { color: #6C3BC5; }
+    .tip-box { background: #F4EFFD; border-color: #CBBDF0; border-left-color: #6C3BC5; }
+    .tip-label { color: #6C3BC5; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #6C3BC5; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">AI 整合開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">AI 整合開發 Skill</div>
+      <h1 class="skill-title">MCP 伺服器整合</h1>
+      <div class="skill-cmd-display">/mcp-integration</div>
+      <p class="skill-hero-desc">
+        協助在 Claude Code 的 Plugin 或設定中接入 Model Context Protocol 伺服器；支援設定 stdio 與 SSE 兩種連線模式；幫助定義 MCP server 的工具清單、資源路徑與存取權限；適合需要讓 Claude 存取外部 API 或本地工具的情境。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #6C3BC5;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/mcp-integration</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">AI 整合開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">協議版本</div>
+          <div class="info-value">MCP</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">連線模式</div>
+          <div class="info-value">stdio / SSE</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">設定位置</div>
+          <div class="info-value">settings.json</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">讓 Claude 能直接存取本地資料庫或檔案系統</li>
+          <li class="use-item">連接第三方 API（如 GitHub、Slack 等）供 Claude 操作</li>
+          <li class="use-item">共用自訂工具給整個開發團隊統一使用</li>
+          <li class="use-item">建立公司內部 MCP 工具伺服器以擴充 Claude 能力</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述要連結的外部服務</div>
+              <div class="step-desc">說明你想讓 Claude 存取哪些外部服務或本地工具，以及需要哪些操作權限。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">生成 MCP server 設定</div>
+              <div class="step-desc">Claude 將產出 MCP server 的完整設定，包括連線模式、工具清單定義與資源路徑。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">寫入 settings.json</div>
+              <div class="step-desc">將生成的設定加入 Claude Code 的 settings.json 或 .mcp.json，套用 MCP 伺服器連線。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">驗證工具可用性</div>
+              <div class="step-desc">重啟 Claude Code 後，確認 MCP 工具出現在可用工具清單中，並執行簡單指令測試連線。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：整合本地檔案系統 MCP</div>
+          <div class="code-content">
+<span class="hl">/mcp-integration</span>
+<span class="dim">幫我設定一個 stdio 模式的 MCP server，</span>
+<span class="dim">讓 Claude 能讀寫 ~/Documents/projects</span>
+<span class="dim">目錄下的所有檔案，並限制不可刪除</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：連接 GitHub API</div>
+          <div class="code-content">
+<span class="hl">/mcp-integration</span>
+<span class="dim">設定 SSE 模式 MCP 連接 GitHub，</span>
+<span class="dim">需要 list_repos、create_issue、</span>
+<span class="dim">read_file 三個工具，使用 PAT 驗證</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">存取權限最小化原則</div>
+          <div class="tip-text">設定 MCP server 時，僅開放 Claude 實際需要的工具與資源路徑，避免授予過大的存取範圍，降低誤操作風險。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">stdio 與 SSE 的選擇</div>
+          <div class="tip-text">本地工具建議使用 stdio 模式，部署於遠端或需多人共用的服務則選擇 SSE 模式，前者延遲更低，後者更易於集中管理。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Claude API 開發 <code class="related-code">/claude-api</code></li>
+          <li class="related-item">Agent 開發指南 <code class="related-code">/agent-development</code></li>
+          <li class="related-item">Plugin 架構指南 <code class="related-code">/plugin-structure</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

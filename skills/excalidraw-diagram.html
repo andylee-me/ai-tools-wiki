@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/excalidraw-diagram — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-design); }
+    .skill-hero-eyebrow::before { background: var(--c-design); }
+    .info-panel-head { background: var(--c-design); }
+    .section-label { color: var(--c-design); }
+    .section-label::before { background: var(--c-design); }
+    .use-item::before { color: var(--c-design); }
+    .step-item::before { color: var(--c-design); }
+    .tip-box { background: #FDF0F5; border-color: #EBB8CF; border-left-color: var(--c-design); }
+    .tip-label { color: var(--c-design); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-design);">介面設計</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">介面設計 Skill</div>
+      <h1 class="skill-title">Excalidraw 圖表</h1>
+      <div class="skill-cmd-display">/excalidraw-diagram</div>
+      <p class="skill-hero-desc">
+        根據描述生成 Excalidraw 相容的 JSON 格式圖表，可視覺化系統架構、工作流程、
+        概念關係圖與序列圖。輸出的 JSON 可直接匯入 Excalidraw 使用，
+        保留手繪風格的流程與連線，讓技術溝通更直覺清晰。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/excalidraw-diagram</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">介面設計</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">Excalidraw JSON</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">圖表類型</div>
+          <div class="info-value">流程圖、架構圖、心智圖</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Write</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">需要快速產出系統架構圖，讓團隊對技術設計達成共識</li>
+          <li class="use-item">規劃使用者操作流程（User Flow），以視覺化方式呈現步驟與分支</li>
+          <li class="use-item">整理概念之間的關聯，製作心智圖或概念圖</li>
+          <li class="use-item">繪製 API 或服務之間的序列圖，說明請求與回應的時序關係</li>
+          <li class="use-item">需要可編輯的手繪風格圖表，而非嚴格規格的 UML 圖</li>
+          <li class="use-item">將文字說明的架構快速轉換為可視覺化圖形與同事分享討論</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述要畫的圖表內容</div>
+              <div class="step-desc">說明圖表的類型（流程圖、架構圖、心智圖等）以及包含的主要節點與關係，描述越清楚，生成結果越準確。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 生成 Excalidraw JSON</div>
+              <div class="step-desc">Skill 會根據描述建構符合 Excalidraw 格式的 JSON，包含每個元素的座標、連線關係、文字標籤與手繪風格參數。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">將 JSON 儲存為 .excalidraw 檔</div>
+              <div class="step-desc">Claude 會使用 Write 工具將 JSON 儲存到指定路徑，副檔名為 .excalidraw，或你可以手動複製貼上內容。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">匯入 Excalidraw 開啟編輯</div>
+              <div class="step-desc">在 Excalidraw 應用程式（桌面版或 Web 版）中選擇「Open」並選取 .excalidraw 檔，圖表即可載入，之後可自由拖拉調整。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：系統架構圖</div>
+          <div class="code-content">
+<span class="hl">/excalidraw-diagram</span>
+<span class="dim">畫一個微服務架構圖，包含：</span>
+<span class="dim">API Gateway → Auth Service、</span>
+<span class="dim">User Service、Order Service，</span>
+<span class="dim">三個服務都連接到同一個 PostgreSQL</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：使用者流程圖</div>
+          <div class="code-content">
+<span class="hl">/excalidraw-diagram</span>
+<span class="dim">畫使用者登入流程：進入首頁 →</span>
+<span class="dim">點擊登入 → 填寫表單 → 驗證成功</span>
+<span class="dim">（失敗則顯示錯誤並重試）→ 進入後台</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：概念心智圖</div>
+          <div class="code-content">
+<span class="hl">/excalidraw-diagram</span>
+<span class="dim">畫一個以「CI/CD Pipeline」為中心</span>
+<span class="dim">的心智圖，分支包含：</span>
+<span class="dim">Build、Test、Deploy、Monitor</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">節點數量影響生成品質</div>
+          <div class="tip-text">圖表節點建議控制在 20 個以內，節點過多時自動排版可能導致元素重疊。複雜架構建議拆成多張圖分別生成，再匯入同一個 Excalidraw 畫布整合。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">生成後可自由手動調整</div>
+          <div class="tip-text">Excalidraw 的優勢在於可編輯性。Claude 生成的圖表是起點，不必追求一次到位，匯入後可以自由拖拉節點位置、修改文字、調整連線路徑，讓圖表更符合你的需求。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">前端設計師 <code class="related-code">/frontend-design</code></li>
+          <li class="related-item">Postrboard 設計 <code class="related-code">/postrboard</code></li>
+          <li class="related-item">架構優化分析 <code class="related-code">/improve-codebase-architecture</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

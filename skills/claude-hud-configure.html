@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/claude-hud:configure — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #64748B; }
+    .section-label::before { background: #64748B; }
+    .use-item::before { color: #64748B; }
+    .step-item::before { color: #64748B; }
+    .tip-box { background: #F1F3F6; border-color: #C4CCD4; border-left-color: #64748B; }
+    .tip-label { color: #64748B; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <div class="brand-mark">SK</div>
+        <span class="brand-text">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span style="background: #64748B; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">系統設定</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Back Bar -->
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">系統設定 Skill</div>
+      <h1 class="skill-title">HUD 狀態列設定</h1>
+      <div class="skill-cmd-display">/claude-hud:configure</div>
+      <p class="skill-hero-desc">
+        設定 Claude Code HUD（Head-Up Display）狀態列的顯示內容與排列；可調整顯示哪些元件（模型名稱、token 用量、工具狀態、當前任務）、版面位置（頂部/底部）、以及語言與預設配置；讓你在工作時隨時掌握 Claude 的執行狀態。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #64748B;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/claude-hud:configure</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">設定項目</div>
+          <div class="info-value">元件 / 位置 / 語言</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Read, Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">想在 HUD 顯示 token 用量，以便即時監控成本並控制使用量</li>
+          <li class="use-item">調整狀態列位置（頂部或底部）以配合個人工作習慣與終端機排版</li>
+          <li class="use-item">隱藏不需要的 HUD 元件，讓介面更簡潔、減少視覺干擾</li>
+          <li class="use-item">切換 HUD 顯示語言，或套用預設配置快速完成初始設定</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述想要顯示的 HUD 元件與排列方式</div>
+              <div class="step-desc">用自然語言告訴 Claude 你希望 HUD 顯示哪些資訊、放在螢幕的哪個位置，例如：「我想在底部顯示 token 用量和當前工具狀態，不需要顯示模型名稱」。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 生成對應的 HUD 設定</div>
+              <div class="step-desc">Claude 會根據你的需求，產生符合 HUD 設定格式的設定物件，包含要啟用的元件清單、位置參數、語言選項，以及是否套用預設配置（preset）。進階手動覆寫的設定將被保留不受影響。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">套用設定並確認顯示效果</div>
+              <div class="step-desc">Claude 使用 Edit 工具將 HUD 設定寫入對應的設定檔。套用後，HUD 狀態列會即時或在下次啟動時更新顯示，請確認元件排列與內容符合預期。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：顯示 token 用量並移至底部</div>
+          <div class="code-content">
+<span class="hl">/claude-hud:configure</span>
+<span class="dim">把 HUD 移到螢幕底部，</span>
+<span class="dim">顯示 token 用量和當前任務，</span>
+<span class="dim">不需要顯示模型名稱</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：套用簡潔預設配置</div>
+          <div class="code-content">
+<span class="hl">/claude-hud:configure</span>
+<span class="dim">我想要最簡潔的 HUD 設定，</span>
+<span class="dim">只顯示工具狀態，其他元件都隱藏</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">進階手動覆寫設定會被保留</div>
+          <div class="tip-text">使用此 Skill 調整 HUD 設定時，只有 Skill 管理的選項（元件、位置、語言、預設配置）會被修改。你在設定檔中手動加入的進階覆寫項目不會被清除，能安全地與 Skill 設定共存。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">先用 /claude-hud:setup 完成初始安裝</div>
+          <div class="tip-text">若你尚未安裝 claude-hud，請先執行 /claude-hud:setup 完成初始設定與安裝流程，再使用 /claude-hud:configure 調整顯示選項。直接執行 configure 而未安裝可能會找不到設定檔位置。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">自動化行為設定 <code class="related-code">/update-config</code></li>
+          <li class="related-item">快捷鍵設定 <code class="related-code">/keybindings-help</code></li>
+          <li class="related-item">Plugin 架構指南 <code class="related-code">/plugin-structure</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

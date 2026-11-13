@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/skill-development — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #A85A10; }
+    .section-label::before { background: #A85A10; }
+    .use-item::before { color: #A85A10; }
+    .step-item::before { color: #A85A10; }
+    .tip-box { background: #FBF4EC; border-color: #E5C9A5; border-left-color: #A85A10; }
+    .tip-label { color: #A85A10; }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #A85A10;">自訂擴充</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">自訂擴充 Skill</div>
+      <h1 class="skill-title">Skill 開發指南</h1>
+      <div class="skill-cmd-display">/skill-development</div>
+      <p class="skill-hero-desc">
+        引導從零建立一個可在 Claude Code 中呼叫的自訂 Skill；協助撰寫 Skill 的 frontmatter（description、when_to_use、args）、主體 prompt 內容、以及讓 Claude 知道何時主動呼叫的觸發描述；輸出可直接部署的 .md Skill 定義檔。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #A85A10;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/skill-development</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">自訂擴充</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">.md Skill 定義檔</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">關鍵欄位</div>
+          <div class="info-value">frontmatter, when_to_use</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">部署位置</div>
+          <div class="info-value">.claude/skills/</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">有一個常用的操作模式想要指令化，讓 Claude 一鍵執行固定流程</li>
+          <li class="use-item">需要給 Claude 一組特定的行為規範，使其在特定情境下遵循客製邏輯</li>
+          <li class="use-item">想建立團隊共用的 Skill 庫，統一工作方式與輸出品質</li>
+          <li class="use-item">已有 prompt 範本想包裝成可複用的 Skill，方便日後維護與分享</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述 Skill 的功能與觸發場景</div>
+              <div class="step-desc">告訴 Claude 這個 Skill 要做什麼、在什麼情況下應該被呼叫，以及有哪些可選參數（args）。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 生成 frontmatter 草稿</div>
+              <div class="step-desc">Claude 會自動產生包含 description、when_to_use、args 等欄位的 frontmatter，可依需求調整內容。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">撰寫 Skill 主體 prompt</div>
+              <div class="step-desc">補充 Skill 執行時的詳細指令說明，包括行為規範、輸出格式要求與範例，讓 Claude 有足夠的脈絡執行任務。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">寫入 .claude/skills/ 並測試</div>
+              <div class="step-desc">將生成的 .md 檔案放置於 .claude/skills/ 目錄，重新啟動 Claude Code 後即可使用斜線指令呼叫新 Skill。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：建立程式碼審查 Skill</div>
+          <div class="code-content">
+<span class="hl">/skill-development</span>
+<span class="dim">我想建立一個 Skill，當使用者輸入 /code-review 時，</span>
+<span class="dim">自動審查當前目錄的 Git diff，並輸出</span>
+<span class="dim">安全性問題、效能問題與程式碼風格建議三個區塊。</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：建立帶參數的 Skill</div>
+          <div class="code-content">
+<span class="hl">/skill-development</span>
+<span class="dim">建立 /translate 指令，接受 lang 參數（預設 en），</span>
+<span class="dim">將使用者輸入的文字翻譯至指定語言，</span>
+<span class="dim">並保留原文的 Markdown 格式。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">when_to_use 是觸發關鍵</div>
+          <div class="tip-text">frontmatter 中的 when_to_use 欄位決定 Claude 是否會主動推薦使用這個 Skill。描述越具體、場景越明確，Claude 自動選用的準確率越高。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">部署後需重新載入</div>
+          <div class="tip-text">將 .md 檔案放入 .claude/skills/ 後，需要重新啟動或重新載入 Claude Code 工作區，新 Skill 才會出現在可用指令清單中。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Hook 開發指南 <code class="related-code">/hook-development</code></li>
+          <li class="related-item">Slash Command 開發 <code class="related-code">/command-development</code></li>
+          <li class="related-item">Plugin 架構指南 <code class="related-code">/plugin-structure</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/handoff — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #0C7272; }
+    .section-label::before { background: #0C7272; }
+    .use-item::before { color: #0C7272; }
+    .step-item::before { color: #0C7272; }
+    .tip-box { background: #EDFAFA; border-color: #B3DEDE; border-left-color: #0C7272; }
+    .tip-label { color: #0C7272; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #0C7272; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">自動化流程</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">自動化流程 Skill</div>
+      <h1 class="skill-title">對話交接文件</h1>
+      <div class="skill-cmd-display">/handoff</div>
+      <p class="skill-hero-desc">
+        將當前對話的所有重要脈絡壓縮成結構化的交接文件（markdown 格式）；包含任務目標、已完成項目、待辦清單、關鍵決策與注意事項；讓另一個 Claude Agent 或新對話可以無縫接手繼續執行，不遺漏背景資訊。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #0C7272;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/handoff</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">自動化流程</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">Markdown 交接文件</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">包含內容</div>
+          <div class="info-value">目標/進度/待辦/決策</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Write</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">對話即將達到 context 上限</li>
+          <li class="use-item">需要將任務交給另一個專門的 Agent 處理</li>
+          <li class="use-item">想在新對話中繼續複雜的長期任務</li>
+          <li class="use-item">記錄目前工作狀態以便日後恢復</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">在對話即將結束或交接前執行</div>
+              <div class="step-desc">當感覺對話快達到 context 上限，或決定要將任務移交時，輸入 /handoff 啟動交接文件生成流程。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 自動整理對話脈絡生成交接文件</div>
+              <div class="step-desc">Claude 掃描整個對話歷程，提取任務目標、已完成的步驟、尚未完成的待辦事項、重要決策與注意事項，組成結構化的 Markdown 文件。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">在新對話中將文件貼給 Claude 以無縫接手</div>
+              <div class="step-desc">開啟新對話或交給其他 Agent 時，將交接文件的內容貼入，新的 Claude 實例即可立即掌握完整背景，繼續執行任務。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：生成並儲存交接文件</div>
+          <div class="code-content">
+<span class="hl">/handoff</span> <span class="dim">生成交接文件並儲存至</span>
+<span class="dim">./handoff-2024-01-15.md</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：交接給特定 Agent</div>
+          <div class="code-content">
+<span class="hl">/handoff</span> <span class="dim">為 /diagnose Agent 準備交接文件，</span>
+<span class="dim">重點標記尚未解決的 Bug 清單</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">越早執行越完整</div>
+          <div class="tip-text">建議在對話仍有足夠 context 空間時執行 /handoff，避免在對話快結束時才執行導致部分歷史資訊無法被讀取，影響交接文件的完整性。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">可補充自定義要點</div>
+          <div class="tip-text">執行時可在指令後附加特殊說明，例如「特別注意權限設定的部分」，Claude 會在交接文件中強調這些重點，確保接手方不會遺漏關鍵資訊。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">循環任務執行 <code class="related-code">/loop</code></li>
+          <li class="related-item">定時排程任務 <code class="related-code">/schedule</code></li>
+          <li class="related-item">Codex 任務委派 <code class="related-code">/codex:rescue</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/web-access — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #0C7272; }
+    .section-label::before { background: #0C7272; }
+    .use-item::before { color: #0C7272; }
+    .step-item::before { color: #0C7272; }
+    .tip-box { background: #EDFAFA; border-color: #B3DEDE; border-left-color: #0C7272; }
+    .tip-label { color: #0C7272; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #0C7272; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">自動化流程</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">自動化流程 Skill</div>
+      <h1 class="skill-title">網路存取工具</h1>
+      <div class="skill-cmd-display">/web-access</div>
+      <p class="skill-hero-desc">
+        所有需要聯網操作的統一入口；整合搜尋、網頁抓取、特定頁面解析等功能；支援在登入後的操作模式下存取需要驗證的頁面；適合蒐集即時資訊、比較競爭對手、或批次抓取公開資料。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #0C7272;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/web-access</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">自動化流程</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">功能模式</div>
+          <div class="info-value">搜尋/抓取/解析</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">支援格式</div>
+          <div class="info-value">HTML, JSON, RSS</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">WebSearch, WebFetch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">需要查詢 Claude 知識截止日後的最新資訊</li>
+          <li class="use-item">從指定網頁提取結構化資料</li>
+          <li class="use-item">比較多個網站的資訊並彙整</li>
+          <li class="use-item">自動化蒐集公開 API 或網頁資料</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述要存取的網路資源或搜尋目標</div>
+              <div class="step-desc">輸入 /web-access 並說明你需要搜尋的關鍵字、要抓取的頁面網址，或想從哪個網站提取哪種資料。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 選擇搜尋或直接抓取並解析內容</div>
+              <div class="step-desc">若提供了明確網址，Claude 使用 WebFetch 直接抓取頁面；若提供的是搜尋需求，則使用 WebSearch 找到相關頁面後再進行解析。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">將結果整理成可用格式回傳</div>
+              <div class="step-desc">解析完成後，Claude 以結構化方式整理結果，可輸出為純文字摘要、JSON 資料或 Markdown 表格，方便後續使用。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：搜尋最新資訊</div>
+          <div class="code-content">
+<span class="hl">/web-access</span> <span class="dim">搜尋「Claude 3.5 Sonnet 最新更新」</span>
+<span class="dim">並整理出最重要的 3 個改動</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：抓取特定頁面資料</div>
+          <div class="code-content">
+<span class="hl">/web-access</span> <span class="dim">抓取 https://example.com/pricing</span>
+<span class="dim">並將各方案的價格整理成表格</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：批次比較多個來源</div>
+          <div class="code-content">
+<span class="hl">/web-access</span> <span class="dim">搜尋前 3 個雲端儲存服務的免費方案，</span>
+<span class="dim">比較容量上限與功能限制</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">尊重網站使用條款</div>
+          <div class="tip-text">使用本 Skill 抓取網頁時，請確認目標網站允許自動化存取，避免對伺服器造成過大負載或違反使用條款。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">搭配 /loop 實現定期抓取</div>
+          <div class="tip-text">若需要每隔一段時間重新抓取同一個頁面以追蹤變化，可搭配 /loop 設定循環間隔，或使用 /schedule 建立持久排程。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">定時排程任務 <code class="related-code">/schedule</code></li>
+          <li class="related-item">循環任務執行 <code class="related-code">/loop</code></li>
+          <li class="related-item">試算表助手 <code class="related-code">/xlsx</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

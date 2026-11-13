@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/simplify — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-code); }
+    .skill-hero-eyebrow::before { background: var(--c-code); }
+    .info-panel-head { background: var(--c-code); }
+    .section-label { color: var(--c-code); }
+    .section-label::before { background: var(--c-code); }
+    .use-item::before { color: var(--c-code); }
+    .step-item::before { color: var(--c-code); }
+    .tip-box { background: #EFF9F3; border-color: #B8DEC7; border-left-color: var(--c-code); }
+    .tip-label { color: var(--c-code); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-code);">程式碼開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">程式碼開發 Skill</div>
+      <h1 class="skill-title">程式碼精簡</h1>
+      <div class="skill-cmd-display">/simplify</div>
+      <p class="skill-hero-desc">
+        在你完成一段程式碼修改後執行。自動審查 git diff 或指定範圍內的變更，
+        找出重複邏輯、過度複雜的巢狀結構、可合併的函數，並直接提出精簡後的版本。
+        讓程式碼在功能不變的前提下，變得更易讀、更易維護。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/simplify</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">程式碼開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">適用時機</div>
+          <div class="info-value">程式碼修改後</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">審查範圍</div>
+          <div class="info-value">git diff 或指定檔案</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Read, Grep, Bash</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">完成一次功能開發或 bug 修復後，想確認改動沒有引入多餘的複雜度</li>
+          <li class="use-item">發現函數越寫越長、巢狀 if-else 層數越來越深時</li>
+          <li class="use-item">重構過程中，確認抽出的共用邏輯是否還能進一步合併</li>
+          <li class="use-item">Code Review 前的自我檢查，讓提交的 diff 更乾淨</li>
+          <li class="use-item">接手舊有程式碼後，想快速找出可清理的技術債</li>
+          <li class="use-item">搭配 /code-reviewer 使用，在審查問題修正後再驗證精簡度</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">完成程式碼修改</div>
+              <div class="step-desc">先讓功能正確運作，確認測試通過後，再執行 /simplify。不要在功能還不完整時過早精簡。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">執行 /simplify 並指定範圍</div>
+              <div class="step-desc">可以不帶參數（自動分析 git diff），或指定特定檔案路徑、目錄，讓審查範圍更聚焦。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">審查精簡建議</div>
+              <div class="step-desc">Claude 會列出各項可精簡的位置，說明問題類型（重複邏輯、過深巢狀、可合併函數等）並附上精簡後的版本供比較。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">確認並套用修正</div>
+              <div class="step-desc">逐一確認每項建議，同意後讓 Claude 直接修改檔案；若有疑慮可個別跳過，保留原有設計決策。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">重新執行測試</div>
+              <div class="step-desc">套用精簡後再跑一次測試，確保行為沒有因重構而改變，接著提交。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：精簡目前的 git diff</div>
+          <div class="code-content">
+<span class="hl">/simplify</span>
+<span class="dim">審查我目前的 git diff，找出</span>
+<span class="dim">可以精簡的地方並直接修正</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：指定特定檔案精簡</div>
+          <div class="code-content">
+<span class="hl">/simplify</span>
+<span class="dim">精簡 src/utils/formatter.ts，</span>
+<span class="dim">這個檔案有很多重複的字串處理邏輯，</span>
+<span class="dim">看看能不能合併成共用函數</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：搭配程式碼審查後使用</div>
+          <div class="code-content">
+<span class="hl">/simplify</span>
+<span class="dim">剛才修完 /code-reviewer 找到的問題，</span>
+<span class="dim">請再跑一次確認修正後的程式碼</span>
+<span class="dim">沒有引入新的複雜度</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">功能正確後才精簡</div>
+          <div class="tip-text">精簡的前提是程式碼行為已確定。在功能還不穩定或測試尚未通過時執行 /simplify，可能會讓除錯變得更困難。建議養成「先讓它跑，再讓它美」的習慣。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">保留刻意的設計決策</div>
+          <div class="tip-text">某些看起來「重複」的程式碼可能是刻意分開的（例如為了可讀性或未來擴充的彈性）。若 Claude 建議合併時，你認為不妥，可以直接告知原因，Skill 會尊重你的決策。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">程式碼審查 <code class="related-code">/code-reviewer</code></li>
+          <li class="related-item">深度除錯診斷 <code class="related-code">/diagnose</code></li>
+          <li class="related-item">架構優化分析 <code class="related-code">/improve-codebase-architecture</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

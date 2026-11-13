@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/update-config — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #64748B; }
+    .section-label::before { background: #64748B; }
+    .use-item::before { color: #64748B; }
+    .step-item::before { color: #64748B; }
+    .tip-box { background: #F1F3F6; border-color: #C4CCD4; border-left-color: #64748B; }
+    .tip-label { color: #64748B; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <div class="brand-mark">SK</div>
+        <span class="brand-text">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span style="background: #64748B; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">系統設定</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Back Bar -->
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">系統設定 Skill</div>
+      <h1 class="skill-title">自動化行為設定</h1>
+      <div class="skill-cmd-display">/update-config</div>
+      <p class="skill-hero-desc">
+        透過修改 settings.json 的 hooks 欄位，設定「每次發生 X 事件時自動執行 Y 指令」的自動化行為；支援 PreToolUse、PostToolUse、Stop 三種事件觸發點；適合建立不需要手動啟動的背景自動化流程，讓 Claude 在指定操作前後自動執行特定腳本。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #64748B;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">設定檔</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">settings.json</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">觸發事件</div>
+          <div class="info-value">PreToolUse / PostToolUse / Stop</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Read, Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">每次 Claude 修改檔案後自動執行測試，確保程式碼品質</li>
+          <li class="use-item">在每次 git push 前自動檢查程式碼格式，避免提交不符規範的程式碼</li>
+          <li class="use-item">對話結束後自動儲存摘要，建立工作記錄存檔</li>
+          <li class="use-item">過濾或記錄特定工具的呼叫行為，用於稽核或除錯</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述要在何種事件下自動執行何種操作</div>
+              <div class="step-desc">用自然語言告訴 Claude 你希望在哪個觸發點（PreToolUse、PostToolUse 或 Stop）自動執行什麼腳本或指令。例如：「每次 Edit 工具執行完畢後，自動執行 npm test」。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 生成對應的 hooks 設定 JSON</div>
+              <div class="step-desc">Claude 會根據你的描述，產生符合格式的 hooks 設定物件，包含觸發事件名稱、匹配條件（工具名稱過濾器）以及要執行的 shell 指令。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">寫入 settings.json 並驗證觸發</div>
+              <div class="step-desc">Claude 使用 Edit 工具將 hooks 設定寫入 settings.json，並協助你執行一次觸發操作，驗證自動化行為是否如預期運作。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：每次修改檔案後自動執行測試</div>
+          <div class="code-content">
+<span class="hl">/update-config</span>
+<span class="dim">每次 Claude 使用 Edit 工具修改檔案後，</span>
+<span class="dim">自動執行 npm test 並把結果顯示出來</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：對話結束後自動儲存摘要</div>
+          <div class="code-content">
+<span class="hl">/update-config</span>
+<span class="dim">在每次對話結束（Stop 事件）時，</span>
+<span class="dim">自動執行 save-summary.sh 腳本</span>
+<span class="dim">將本次對話摘要存入 logs/ 目錄</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">hooks 由執行環境而非 Claude 觸發</div>
+          <div class="tip-text">設定完成後，hooks 中的腳本是由 Claude Code 執行環境自動呼叫，不需要也無法透過對話指令手動觸發。確保腳本具有正確的執行權限，並做好錯誤處理以避免 hook 失敗中斷工作流程。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">善用工具名稱過濾器縮小觸發範圍</div>
+          <div class="tip-text">hooks 設定支援依工具名稱篩選，例如只在 Edit 或 Bash 工具觸發時才執行，避免每次任何工具呼叫都觸發不必要的腳本，降低效能影響。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Hook 開發指南 <code class="related-code">/hook-development</code></li>
+          <li class="related-item">快捷鍵設定 <code class="related-code">/keybindings-help</code></li>
+          <li class="related-item">HUD 狀態列設定 <code class="related-code">/claude-hud:configure</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

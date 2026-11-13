@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/plugin-structure — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #A85A10; }
+    .section-label::before { background: #A85A10; }
+    .use-item::before { color: #A85A10; }
+    .step-item::before { color: #A85A10; }
+    .tip-box { background: #FBF4EC; border-color: #E5C9A5; border-left-color: #A85A10; }
+    .tip-label { color: #A85A10; }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #A85A10;">自訂擴充</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">自訂擴充 Skill</div>
+      <h1 class="skill-title">Plugin 架構指南</h1>
+      <div class="skill-cmd-display">/plugin-structure</div>
+      <p class="skill-hero-desc">
+        引導建立一個完整的 Claude Code Plugin；解說 plugin.json 的設定欄位（name、description、skills、commands、hooks）、目錄組織規範（skills/、commands/、hooks/）、以及各元件的職責分工；適合想打包一組相關 Skill 並分享給他人的情境。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #A85A10;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/plugin-structure</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">自訂擴充</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">核心設定</div>
+          <div class="info-value">plugin.json</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">包含元件</div>
+          <div class="info-value">Skills / Commands / Hooks</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">部署位置</div>
+          <div class="info-value">.claude/plugins/</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">想將多個相關 Skill 打包成一個可分享的套件，方便他人一次安裝所有元件</li>
+          <li class="use-item">建立公司內部的標準 Claude 擴充集，確保所有成員使用一致的工具配置</li>
+          <li class="use-item">需要清晰的目錄結構組織大量自訂指令，避免 .claude/ 目錄雜亂無章</li>
+          <li class="use-item">準備發布或分享給社群的 Plugin，需要符合規範的完整結構與說明文件</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述 Plugin 的整體功能定位</div>
+              <div class="step-desc">說明這個 Plugin 的主題（如「前端開發工具包」或「資料科學助手」），以及目標使用者與解決的核心問題。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">列出包含的 Skills / Commands / Hooks</div>
+              <div class="step-desc">逐一說明 Plugin 內的每個元件名稱與功能，Claude 會根據這份清單規劃各元件的職責分工與相互關係。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">生成 plugin.json 與目錄結構</div>
+              <div class="step-desc">Claude 生成符合規範的 plugin.json 設定檔，包含 name、description、version、skills、commands、hooks 等欄位，並輸出建議的目錄樹狀結構。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">依序建立各元件並驗證</div>
+              <div class="step-desc">逐一建立 Plugin 內的 Skills、Commands 與 Hooks 定義檔，完成後將整個 Plugin 目錄放置於 .claude/plugins/ 並重新載入驗證。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：建立前端開發 Plugin</div>
+          <div class="code-content">
+<span class="hl">/plugin-structure</span>
+<span class="dim">我想建立一個「前端工具包」Plugin，包含：</span>
+<span class="dim">1. /component Skill：生成 React 元件</span>
+<span class="dim">2. /design-review Command：審查 CSS 設計</span>
+<span class="dim">3. PostToolUse Hook：每次寫入 .tsx 後自動執行 TypeScript 型別檢查</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：建立資料分析 Plugin</div>
+          <div class="code-content">
+<span class="hl">/plugin-structure</span>
+<span class="dim">建立「資料科學助手」Plugin，包含讀取 CSV、</span>
+<span class="dim">生成 EDA 報告與繪製統計圖表三個 Skill，</span>
+<span class="dim">並加入 Stop Hook 自動清理暫存檔案。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">plugin.json 是 Plugin 的入口點</div>
+          <div class="tip-text">plugin.json 必須放在 Plugin 根目錄，並正確列出所有元件的相對路徑。若路徑有誤，Claude Code 將無法正確載入 Plugin 中的部分元件，建議完成後逐一驗證每個元件是否可正常呼叫。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">版本號有助於管理更新</div>
+          <div class="tip-text">在 plugin.json 的 version 欄位維護語意化版本號（如 1.0.0）。當 Plugin 有破壞性變更時，升版有助於使用者識別需要重新設定或調整現有工作流程。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Skill 開發指南 <code class="related-code">/skill-development</code></li>
+          <li class="related-item">Hook 開發指南 <code class="related-code">/hook-development</code></li>
+          <li class="related-item">Slash Command 開發 <code class="related-code">/command-development</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

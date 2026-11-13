@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/claude-api — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #6C3BC5; }
+    .section-label::before { background: #6C3BC5; }
+    .use-item::before { color: #6C3BC5; }
+    .step-item::before { color: #6C3BC5; }
+    .tip-box { background: #F4EFFD; border-color: #CBBDF0; border-left-color: #6C3BC5; }
+    .tip-label { color: #6C3BC5; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #6C3BC5; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">AI 整合開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">AI 整合開發 Skill</div>
+      <h1 class="skill-title">Claude API 開發</h1>
+      <div class="skill-cmd-display">/claude-api</div>
+      <p class="skill-hero-desc">
+        協助使用 Anthropic SDK 建立 AI 應用；涵蓋基礎 Messages API 呼叫、Tool Use 工具定義與呼叫循環、Streaming 串流回應、以及 System Prompt 設計最佳實踐；適合第一次整合 Claude 或需要進階 API 功能的開發者。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #6C3BC5;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/claude-api</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">AI 整合開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">SDK 語言</div>
+          <div class="info-value">Python / TypeScript</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">核心功能</div>
+          <div class="info-value">Tool Use, Streaming</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Write, Bash</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">首次將 Claude 整合進自建應用，需要快速上手 SDK</li>
+          <li class="use-item">需要 Tool Use 讓 AI 呼叫外部函數或 API</li>
+          <li class="use-item">需要串流回應（Streaming）以降低使用者等待感</li>
+          <li class="use-item">設計多輪對話的 message history 管理機制</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述要建立的 AI 功能</div>
+              <div class="step-desc">說明你想實作的功能，例如「建立一個可呼叫天氣 API 的 AI 助理」，越具體越好。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">選擇 SDK 與語言</div>
+              <div class="step-desc">指定使用 Python 或 TypeScript SDK，以及是否需要 Tool Use、Streaming 等進階功能。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">生成 API 呼叫程式碼</div>
+              <div class="step-desc">Claude 將產出完整可執行的程式碼，包含 SDK 初始化、messages 組裝與回應解析。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">測試與錯誤處理</div>
+              <div class="step-desc">使用 Bash 工具執行程式，Claude 協助排查 API 錯誤並補強例外處理邏輯。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：建立帶 Tool Use 的 AI 助理</div>
+          <div class="code-content">
+<span class="hl">/claude-api</span>
+<span class="dim">用 Python SDK 建立一個 AI 助理，</span>
+<span class="dim">定義一個 get_weather(city) 工具，</span>
+<span class="dim">讓 Claude 能在對話中主動呼叫，</span>
+<span class="dim">並以 streaming 方式輸出回應</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：多輪對話 history 管理</div>
+          <div class="code-content">
+<span class="hl">/claude-api</span>
+<span class="dim">用 TypeScript SDK 實作多輪對話，</span>
+<span class="dim">保留 message history 並限制最多</span>
+<span class="dim">保留 20 輪，超過時自動截斷最舊記錄</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">API Key 安全管理</div>
+          <div class="tip-text">切勿將 ANTHROPIC_API_KEY 寫入程式碼或版本控制，應使用環境變數或 .env 檔管理，並將 .env 加入 .gitignore。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">Tool Use 循環需謹慎設計</div>
+          <div class="tip-text">Tool Use 採用循環呼叫架構，請設定最大迭代次數避免無限循環，並對工具回傳值進行驗證以防止意外行為。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">MCP 伺服器整合 <code class="related-code">/mcp-integration</code></li>
+          <li class="related-item">Agent 開發指南 <code class="related-code">/agent-development</code></li>
+          <li class="related-item">Codex 任務委派 <code class="related-code">/codex:rescue</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

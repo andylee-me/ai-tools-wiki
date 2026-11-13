@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/pptx — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-doc); }
+    .skill-hero-eyebrow::before { background: var(--c-doc); }
+    .info-panel-head { background: var(--c-doc); }
+    .section-label { color: var(--c-doc); }
+    .section-label::before { background: var(--c-doc); }
+    .use-item::before { color: var(--c-doc); }
+    .step-item::before { color: var(--c-doc); }
+    .tip-box { background: #E9F5FB; border-color: #B8D8EB; border-left-color: var(--c-doc); }
+    .tip-label { color: var(--c-doc); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-doc);">文件處理</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Back -->
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">文件處理 Skill</div>
+      <h1 class="skill-title">簡報製作助手</h1>
+      <div class="skill-cmd-display">/pptx</div>
+      <p class="skill-hero-desc">
+        從文字大綱自動生成 PowerPoint 簡報（.pptx）的 Skill。可建立完整的投影片架構，包含標題頁、目錄、內容頁與結語頁；自動將段落轉換為條列要點；並提供主題配色與版面配置建議，讓簡報兼具結構清晰與視覺一致性。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/pptx</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">文件處理</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">.pptx</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">適用場景</div>
+          <div class="info-value">商業簡報、教學投影片</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Write、Bash</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">需要快速將報告大綱、會議筆記或研究摘要轉化為可簡報的投影片檔案</li>
+          <li class="use-item">製作商業提案、產品發表或季度回顧等需要固定結構的正式簡報</li>
+          <li class="use-item">解析現有 .pptx 檔案，提取每頁標題與重點文字，整理成摘要文字</li>
+          <li class="use-item">需要批次產生多份格式一致的簡報，例如多場次課程的教學投影片</li>
+          <li class="use-item">想要為現有文字內容規劃投影片架構，並獲得配色與版面的建議方向</li>
+        </ul>
+      </div>
+
+      <!-- 使用步驟 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">輸入 /pptx 並提供簡報主題或大綱</div>
+              <div class="step-desc">在對話中輸入 /pptx，接著描述簡報主題、目標受眾、預計投影片數量，或直接貼上你已有的章節大綱。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 規劃投影片架構</div>
+              <div class="step-desc">Skill 會先輸出投影片架構草稿（標題頁 → 目錄 → 各內容頁 → 結語），你可以在此階段調整章節順序或要求新增刪除特定頁面。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">生成 Python 腳本並執行</div>
+              <div class="step-desc">確認架構後，Skill 透過 python-pptx 程式庫撰寫腳本，自動建立每張投影片的文字框、標題與條列項目，並套用指定的主題配色。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">取得 .pptx 檔案並細部調整</div>
+              <div class="step-desc">Claude 告知輸出檔案路徑，你可以用 PowerPoint 或 Keynote 開啟，再手動調整圖片位置、動畫效果或更換主題樣式。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：從主題直接生成完整簡報</div>
+          <div class="code-content">
+<span class="hl">/pptx</span> <span class="dim">製作一份「2025 年 AI 趨勢報告」簡報，</span>
+<span class="dim">共 10 張投影片，包含標題頁、目錄、5 個趨勢章節</span>
+<span class="dim">和結語，使用藍色系配色，儲存為 ./ai-trends.pptx</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：從現有文件轉換為簡報</div>
+          <div class="code-content">
+<span class="hl">/pptx</span> <span class="dim">讀取 ./report.md 中的內容，</span>
+<span class="dim">依照各 ## 標題建立一張投影片，</span>
+<span class="dim">內文自動整理為條列要點，輸出 ./slides.pptx</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：解析現有簡報的內容</div>
+          <div class="code-content">
+<span class="hl">/pptx</span> <span class="dim">讀取 ./presentation.pptx，</span>
+<span class="dim">逐頁條列每張投影片的標題與主要文字內容，</span>
+<span class="dim">整理成一份繁體中文摘要</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">需要安裝 python-pptx 套件</div>
+          <div class="tip-text">本 Skill 使用 Python 的 python-pptx 程式庫操作 .pptx 格式。若環境尚未安裝，Claude 會自動執行 pip install python-pptx。請確認執行環境已有 Python 3 與 pip 可用。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">圖片與動畫需手動補充</div>
+          <div class="tip-text">透過程式碼生成的 .pptx 以文字結構為主，投影片中的圖片插入、頁面轉場動畫、SmartArt 等視覺效果仍需在 PowerPoint 中手動設定。建議將 Skill 產出視為結構骨架，再進行視覺美化。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Word 文件助手 <code class="related-code">/docx</code></li>
+          <li class="related-item">論文解讀助手 <code class="related-code">/paper-reader-skill</code></li>
+          <li class="related-item">前端設計師 <code class="related-code">/frontend-design</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

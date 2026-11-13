@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/hook-development — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #A85A10; }
+    .section-label::before { background: #A85A10; }
+    .use-item::before { color: #A85A10; }
+    .step-item::before { color: #A85A10; }
+    .tip-box { background: #FBF4EC; border-color: #E5C9A5; border-left-color: #A85A10; }
+    .tip-label { color: #A85A10; }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #A85A10;">自訂擴充</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">自訂擴充 Skill</div>
+      <h1 class="skill-title">Hook 開發指南</h1>
+      <div class="skill-cmd-display">/hook-development</div>
+      <p class="skill-hero-desc">
+        協助建立 Claude Code 的 Hook 腳本；支援三種 Hook 類型：PreToolUse（工具呼叫前驗證）、PostToolUse（工具呼叫後處理）、Stop（對話結束時自動執行）；Hook 以 shell script 或任意可執行指令實作；可用於自動格式化、安全驗證、自動提交等場景。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #A85A10;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/hook-development</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">自訂擴充</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Hook 類型</div>
+          <div class="info-value">PreToolUse / PostToolUse / Stop</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">實作語言</div>
+          <div class="info-value">Shell / 任意可執行</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">設定位置</div>
+          <div class="info-value">settings.json hooks 區段</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">每次存檔後自動執行 lint 或格式化，確保程式碼風格一致</li>
+          <li class="use-item">防止 Claude 刪除特定目錄或檔案，加入操作前的安全驗證</li>
+          <li class="use-item">在對話結束時自動 git commit，記錄每次工作階段的變更</li>
+          <li class="use-item">記錄所有工具呼叫行為到 log 檔，方便事後稽核與除錯</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述要在何時自動執行什麼</div>
+              <div class="step-desc">用自然語言說明觸發時機（工具呼叫前/後/對話結束時）以及要自動執行的具體行為。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">決定 Hook 類型（Pre / Post / Stop）</div>
+              <div class="step-desc">Claude 會根據描述建議合適的 Hook 類型：PreToolUse 用於驗證與攔截、PostToolUse 用於後處理、Stop 用於對話結束後的收尾動作。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">生成 Hook 腳本</div>
+              <div class="step-desc">Claude 生成對應的 shell script 或可執行指令，包含必要的錯誤處理與輸出格式，使腳本能正確回傳狀態碼給 Claude Code。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">寫入 settings.json 並測試</div>
+              <div class="step-desc">將 Hook 設定加入 settings.json 的 hooks 區段，指定觸發條件與腳本路徑，重新啟動後驗證 Hook 是否如預期執行。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：自動格式化 PostToolUse Hook</div>
+          <div class="code-content">
+<span class="hl">/hook-development</span>
+<span class="dim">每次 Claude 寫入 .py 檔案後，自動執行</span>
+<span class="dim">black 格式化與 ruff lint 檢查，</span>
+<span class="dim">若有錯誤則輸出訊息讓 Claude 知道需要修正。</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：Stop Hook 自動提交</div>
+          <div class="code-content">
+<span class="hl">/hook-development</span>
+<span class="dim">在每次對話結束時，若工作目錄有未提交的變更，</span>
+<span class="dim">自動執行 git add . 和 git commit，</span>
+<span class="dim">commit message 使用當天日期與時間。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">腳本需具備可執行權限</div>
+          <div class="tip-text">Hook 腳本檔案必須設定可執行權限（chmod +x），否則 Claude Code 在呼叫時會因權限不足而靜默失敗，建議在部署後立即執行手動測試確認。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">PreToolUse 返回碼決定是否繼續</div>
+          <div class="tip-text">PreToolUse Hook 的腳本若返回非零狀態碼，Claude Code 會中止對應的工具呼叫。設計安全驗證 Hook 時，請確保只在真正需要攔截的情況才返回非零值。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Skill 開發指南 <code class="related-code">/skill-development</code></li>
+          <li class="related-item">自動化行為設定 <code class="related-code">/update-config</code></li>
+          <li class="related-item">Plugin 架構指南 <code class="related-code">/plugin-structure</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

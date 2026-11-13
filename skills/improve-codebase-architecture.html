@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/improve-codebase-architecture — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-code); }
+    .skill-hero-eyebrow::before { background: var(--c-code); }
+    .info-panel-head { background: var(--c-code); }
+    .section-label { color: var(--c-code); }
+    .section-label::before { background: var(--c-code); }
+    .use-item::before { color: var(--c-code); }
+    .step-item::before { color: var(--c-code); }
+    .tip-box { background: #EFF9F3; border-color: #B8DEC7; border-left-color: var(--c-code); }
+    .tip-label { color: var(--c-code); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-code);">程式碼開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">程式碼開發 Skill</div>
+      <h1 class="skill-title">架構優化分析</h1>
+      <div class="skill-cmd-display">/improve-codebase-architecture</div>
+      <p class="skill-hero-desc">
+        掃描整個程式碼庫的架構現況，識別模組邊界問題、循環依賴與過度耦合。
+        依據程式碼庫既有的技術決策與領域語言提出改善建議，不盲目套用設計模式，
+        優先考慮實際需求，讓架構演進符合專案的真實脈絡。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/improve-codebase-architecture</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">程式碼開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分析範圍</div>
+          <div class="info-value">整個程式碼庫</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">架構報告 + 重構建議</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Glob, Grep, Read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">專案累積超過一定規模後，感覺新功能越來越難加進去時</li>
+          <li class="use-item">發現不同模組之間的依賴關係錯綜複雜，難以梳理</li>
+          <li class="use-item">修改一個地方意外造成另一個不相關功能出錯（隱性耦合）</li>
+          <li class="use-item">接手遺留系統，需要快速理解整體架構全貌與問題所在</li>
+          <li class="use-item">規劃大型重構或技術遷移前，需要先摸清現有架構的邊界</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">執行指令並說明背景</div>
+              <div class="step-desc">輸入 /improve-codebase-architecture，可選擇性地說明目前遇到的痛點，例如「模組 A 和 B 一直互相引用」或「新增功能總要改 5 個地方」。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 掃描程式碼庫結構</div>
+              <div class="step-desc">Skill 使用 Glob 和 Grep 工具廣泛掃描檔案結構、import 關係與模組邊界，建立整體架構地圖。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">閱讀架構分析報告</div>
+              <div class="step-desc">Claude 會輸出架構現況報告，列出識別到的問題（循環依賴、違反層次邊界、過胖的共用模組等），並說明每項問題的影響範圍。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">討論並優先排序重構項目</div>
+              <div class="step-desc">與 Claude 討論哪些問題最優先處理，考量改動風險與收益後，訂出分階段的重構計畫。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">逐步執行重構</div>
+              <div class="step-desc">依照計畫逐一重構，每個階段結束後可再次執行本 Skill 確認架構是否朝預期方向改善。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：整體架構健診</div>
+          <div class="code-content">
+<span class="hl">/improve-codebase-architecture</span>
+<span class="dim">這個專案用 Node.js 後端 + React 前端，</span>
+<span class="dim">最近加功能越來越慢，幫我找出</span>
+<span class="dim">架構上最需要改善的地方</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：針對特定問題深挖</div>
+          <div class="code-content">
+<span class="hl">/improve-codebase-architecture</span>
+<span class="dim">src/services/ 裡面的模組彼此互相引用，</span>
+<span class="dim">我懷疑有循環依賴，請分析並提出</span>
+<span class="dim">解開依賴的方案</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：重構前評估</div>
+          <div class="code-content">
+<span class="hl">/improve-codebase-architecture</span>
+<span class="dim">我打算把 monolith 拆成 3 個服務，</span>
+<span class="dim">先幫我分析目前的程式碼邊界在哪，</span>
+<span class="dim">哪些部分耦合太緊不好拆</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">架構改善不等於套設計模式</div>
+          <div class="tip-text">本 Skill 的建議基於程式碼庫的實際情況，而非照本宣科套用 Clean Architecture 或 DDD。若你的專案規模不大，過度分層反而是負擔。Claude 會根據實際需求給出務實建議。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">大型分析建議提供 CONTEXT.md</div>
+          <div class="tip-text">若專案根目錄有 CONTEXT.md 或 docs/adr/ 架構決策記錄，Skill 會優先參考這些文件，讓建議更貼近你的技術決策脈絡，避免提出與既有決策衝突的方案。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">程式碼審查 <code class="related-code">/code-reviewer</code></li>
+          <li class="related-item">程式碼精簡 <code class="related-code">/simplify</code></li>
+          <li class="related-item">深度除錯診斷 <code class="related-code">/diagnose</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

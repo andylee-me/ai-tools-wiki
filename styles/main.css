@@ -258,13 +258,27 @@ a { color: inherit; text-decoration: none; }
 /* ════════════════════════════
    CATEGORY SECTIONS
 ════════════════════════════ */
+/* ════════════════════════════
+   SECTION WRAPPERS (full-bleed tint per category)
+════════════════════════════ */
+.section-wrap {
+  border-bottom: 1px solid var(--border);
+  border-left: 5px solid transparent;
+}
+.section-wrap:last-child { border-bottom: none; }
+.section-wrap.s-doc    { background: rgba(14,111,173,0.06);  border-left-color: var(--c-doc); }
+.section-wrap.s-code   { background: rgba(26,122,74,0.06);   border-left-color: var(--c-code); }
+.section-wrap.s-design { background: rgba(191,37,88,0.06);   border-left-color: var(--c-design); }
+.section-wrap.s-ai     { background: rgba(108,59,197,0.06);  border-left-color: var(--c-ai); }
+.section-wrap.s-auto   { background: rgba(12,114,114,0.06);  border-left-color: var(--c-auto); }
+.section-wrap.s-extend { background: rgba(168,90,16,0.06);   border-left-color: var(--c-extend); }
+.section-wrap.s-config { background: rgba(100,116,139,0.06); border-left-color: var(--c-config); }
+
 .cat-section {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 3.5rem 0;
-  border-bottom: 1px solid var(--border);
 }
-.cat-section:last-of-type { border-bottom: none; }
 
 /* ── Solid-colour category band ── */
 .cat-band {

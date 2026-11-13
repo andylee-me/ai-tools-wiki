@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/postrboard — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-design); }
+    .skill-hero-eyebrow::before { background: var(--c-design); }
+    .info-panel-head { background: var(--c-design); }
+    .section-label { color: var(--c-design); }
+    .section-label::before { background: var(--c-design); }
+    .use-item::before { color: var(--c-design); }
+    .step-item::before { color: var(--c-design); }
+    .tip-box { background: #FDF0F5; border-color: #EBB8CF; border-left-color: var(--c-design); }
+    .tip-label { color: var(--c-design); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-design);">介面設計</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">介面設計 Skill</div>
+      <h1 class="skill-title">Postrboard 設計</h1>
+      <div class="skill-cmd-display">/postrboard</div>
+      <p class="skill-hero-desc">
+        應用 Postrboard 的「Quiet CSS」設計哲學——克制的視覺風格、以內容為主的排版、拒絕過度裝飾。
+        生成乾淨、可維護的 HTML/CSS，適合內容導向的文章頁、文件站與輕量工具界面，
+        讓設計退到背景，讓內容站到前面。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/postrboard</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">介面設計</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">設計哲學</div>
+          <div class="info-value">Quiet CSS</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">HTML / CSS</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">適用場景</div>
+          <div class="info-value">內容導向介面</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">設計部落格、技術文章頁或文件站，希望排版清晰不干擾閱讀</li>
+          <li class="use-item">製作輕量的後台工具或內部看板，不需要華麗視覺效果</li>
+          <li class="use-item">發現現有介面過度裝飾、動畫太多，需要重新收斂風格</li>
+          <li class="use-item">需要高可維護性的 CSS，避免日後改版時的樣式衝突</li>
+          <li class="use-item">想要讓設計服務於內容，而非以設計本身為目的的場景</li>
+          <li class="use-item">快速搭建 MVP 或原型，需要立刻可用且不失品味的基礎樣式</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">說明頁面類型與內容結構</div>
+              <div class="step-desc">描述要設計的頁面（文章頁、工具介面、文件站首頁等），以及主要的內容區塊（標題、正文、側欄、表格等）。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 套用 Quiet CSS 原則</div>
+              <div class="step-desc">Skill 會以克制為基準：選用可讀性高的字型組合、充足的行距與留白、低飽和度色彩，拒絕陰影堆疊、漸層背景與無意義的動畫。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">取得完整 HTML/CSS 輸出</div>
+              <div class="step-desc">Claude 生成可立即使用的完整 HTML 與 CSS，變數清晰定義在 :root，便於後續自訂品牌色彩與字型。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">根據實際內容微調</div>
+              <div class="step-desc">將真實內容替換進去後，可告知 Claude 哪些比例需要調整，例如「行距稍微再寬一點」或「標題層級要更明顯」。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：技術文章閱讀頁</div>
+          <div class="code-content">
+<span class="hl">/postrboard</span>
+<span class="dim">設計一個技術部落格文章頁，</span>
+<span class="dim">需要：大標題、發布日期、正文（含</span>
+<span class="dim">程式碼區塊與圖片）、相關文章列表，</span>
+<span class="dim">要乾淨、易讀、不要花俏動效</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：輕量後台工具介面</div>
+          <div class="code-content">
+<span class="hl">/postrboard</span>
+<span class="dim">設計一個內部報表工具的 UI，</span>
+<span class="dim">左側導覽、右側主內容區含表格，</span>
+<span class="dim">功能優先，視覺克制，不用卡片陰影</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：文件站首頁</div>
+          <div class="code-content">
+<span class="hl">/postrboard</span>
+<span class="dim">設計一個開源專案的文件站首頁，</span>
+<span class="dim">包含導覽列、Hero 區、功能說明列表、</span>
+<span class="dim">快速入門步驟，Quiet 風格</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">Quiet 不等於無個性</div>
+          <div class="tip-text">Quiet CSS 的克制是有觀點的克制，不是放棄品味。好的 Quiet 設計在字型選擇、行距比例、留白節奏上仍然有強烈的設計判斷，只是把注意力導向內容，而非裝飾本身。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">與 /frontend-design 的差異</div>
+          <div class="tip-text">/frontend-design 追求大膽、獨特的視覺方向，適合行銷頁、展示頁或需要強烈品牌印象的場景。/postrboard 則適合以內容消費為主的頁面，兩者目標不同，依使用場景選擇。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">前端設計師 <code class="related-code">/frontend-design</code></li>
+          <li class="related-item">Excalidraw 圖表 <code class="related-code">/excalidraw-diagram</code></li>
+          <li class="related-item">程式碼精簡 <code class="related-code">/simplify</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

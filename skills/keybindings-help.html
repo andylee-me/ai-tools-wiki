@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/keybindings-help — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #64748B; }
+    .section-label::before { background: #64748B; }
+    .use-item::before { color: #64748B; }
+    .step-item::before { color: #64748B; }
+    .tip-box { background: #F1F3F6; border-color: #C4CCD4; border-left-color: #64748B; }
+    .tip-label { color: #64748B; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="brand">
+        <div class="brand-mark">SK</div>
+        <span class="brand-text">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span style="background: #64748B; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">系統設定</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Back Bar -->
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">系統設定 Skill</div>
+      <h1 class="skill-title">快捷鍵設定</h1>
+      <div class="skill-cmd-display">/keybindings-help</div>
+      <p class="skill-hero-desc">
+        協助自訂 Claude Code 的鍵盤快捷鍵；說明如何修改 keybindings.json 以重新綁定現有快捷鍵、新增 Chord 組合鍵（兩鍵序列觸發）、或停用不常用的預設按鍵；適合想提升操作效率、習慣自訂鍵位的進階使用者。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #64748B;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">設定檔</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">keybindings.json</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">功能</div>
+          <div class="info-value">重新綁定 / Chord 序列鍵</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Read, Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">現有快捷鍵與其他工具衝突，需要更換為不同的按鍵組合</li>
+          <li class="use-item">想新增一個快速觸發常用 Skill 的按鍵，減少重複輸入指令的時間</li>
+          <li class="use-item">設定 Vim 或 Emacs 風格的鍵位習慣，讓操作符合個人慣性</li>
+          <li class="use-item">為特定工作流程建立自訂鍵盤捷徑，提升多工操作效率</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述要綁定的操作與偏好的按鍵組合</div>
+              <div class="step-desc">用自然語言說明你想綁定的功能與目標按鍵，例如：「我想用 Ctrl+K Ctrl+S 快速執行 /simplify 指令」或「幫我把送出訊息的鍵從 Enter 改成 Ctrl+Enter」。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 生成 keybindings.json 設定</div>
+              <div class="step-desc">Claude 會根據你的需求，產生符合格式的按鍵綁定設定物件，包含 key 序列、command 名稱，以及選填的 when 條件。Chord 組合鍵會以空格分隔兩個按鍵序列。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">寫入設定檔並重啟生效</div>
+              <div class="step-desc">Claude 使用 Edit 工具將新設定寫入 keybindings.json。設定完成後，重啟 Claude Code 讓新的快捷鍵生效，接著可以實際按鍵測試是否正常觸發。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：新增 Chord 組合鍵觸發 Skill</div>
+          <div class="code-content">
+<span class="hl">/keybindings-help</span>
+<span class="dim">我想用 Ctrl+K 再按 R 這個 Chord 組合鍵</span>
+<span class="dim">快速執行 /code-reviewer 指令</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：重新綁定衝突的快捷鍵</div>
+          <div class="code-content">
+<span class="hl">/keybindings-help</span>
+<span class="dim">Ctrl+P 快捷鍵和我的終端機設定衝突，</span>
+<span class="dim">請幫我改成 Ctrl+Shift+P</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">重啟後才會生效</div>
+          <div class="tip-text">修改 keybindings.json 後，必須完整重啟 Claude Code 才能載入新設定。熱重載不支援快捷鍵設定，請確保重啟前已儲存好所有進行中的工作。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">避免與系統快捷鍵重疊</div>
+          <div class="tip-text">設定前先確認目標按鍵組合未被作業系統或終端機佔用，否則 Claude Code 的快捷鍵可能無法正常攔截。若遇到按鍵無反應，請優先排查系統層級的快捷鍵衝突。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">自動化行為設定 <code class="related-code">/update-config</code></li>
+          <li class="related-item">HUD 狀態列設定 <code class="related-code">/claude-hud:configure</code></li>
+          <li class="related-item">Plugin 架構指南 <code class="related-code">/plugin-structure</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/loop — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #0C7272; }
+    .section-label::before { background: #0C7272; }
+    .use-item::before { color: #0C7272; }
+    .step-item::before { color: #0C7272; }
+    .tip-box { background: #EDFAFA; border-color: #B3DEDE; border-left-color: #0C7272; }
+    .tip-label { color: #0C7272; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #0C7272; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">自動化流程</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">自動化流程 Skill</div>
+      <h1 class="skill-title">循環任務執行</h1>
+      <div class="skill-cmd-display">/loop</div>
+      <p class="skill-hero-desc">
+        以指定的時間間隔或條件，循環反覆執行同一個指令或 Skill；適合建立「每隔 N 分鐘檢查一次狀態」的輕量監控迴圈；可設定最大執行次數或停止條件；對需要長時間觀察變化的任務特別有用。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #0C7272;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/loop</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">自動化流程</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">執行方式</div>
+          <div class="info-value">循環迭代</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">設定項目</div>
+          <div class="info-value">間隔、次數、條件</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Bash、CronCreate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">等待某個條件達成（如檔案出現、API 回應變化）</li>
+          <li class="use-item">定期輪詢狀態（如 CI/CD 建置結果）</li>
+          <li class="use-item">持續監控某個指標或日誌</li>
+          <li class="use-item">需要在指定時間內反覆嘗試某個操作</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">指定要循環執行的指令或 Skill</div>
+              <div class="step-desc">輸入 /loop 並告訴 Claude 你想反覆執行的指令名稱或任務描述，例如「/loop /web-access 抓取這個頁面」。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">設定間隔時間（秒/分）與停止條件</div>
+              <div class="step-desc">指定每次執行之間的間隔，以及何時停止迴圈（如執行次數上限、特定回傳值或超時時間）。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">循環開始執行，每輪回報結果</div>
+              <div class="step-desc">迴圈啟動後，Claude 會在每次執行完畢後回報當輪結果，直到停止條件觸發為止。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：每 5 分鐘輪詢一次建置狀態</div>
+          <div class="code-content">
+<span class="hl">/loop</span> <span class="dim">5m 檢查 ./build.log 最後一行</span>
+<span class="dim">若出現 "Build succeeded" 則停止</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：限制最多執行 10 次</div>
+          <div class="code-content">
+<span class="hl">/loop</span> <span class="dim">30s --max 10 /web-access</span>
+<span class="dim">抓取 API 狀態頁並記錄回應碼</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：等待檔案出現後停止</div>
+          <div class="code-content">
+<span class="hl">/loop</span> <span class="dim">1m 檢查 ./output/result.json</span>
+<span class="dim">是否存在，存在則停止並讀取內容</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">務必設定停止條件</div>
+          <div class="tip-text">避免無限迴圈消耗大量 Context，建議同時設定最大執行次數與超時時間，確保迴圈在預期範圍內結束。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">長期排程改用 /schedule</div>
+          <div class="tip-text">若任務需要在數小時後或隔天再執行，建議改用 /schedule 建立持久化的 Cron 排程，而非讓 /loop 長時間佔用對話。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">定時排程任務 <code class="related-code">/schedule</code></li>
+          <li class="related-item">對話交接文件 <code class="related-code">/handoff</code></li>
+          <li class="related-item">網路存取工具 <code class="related-code">/web-access</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/paper-reader-skill — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .skill-hero-eyebrow { color: var(--c-doc); }
+    .skill-hero-eyebrow::before { background: var(--c-doc); }
+    .info-panel-head { background: var(--c-doc); }
+    .section-label { color: var(--c-doc); }
+    .section-label::before { background: var(--c-doc); }
+    .use-item::before { color: var(--c-doc); }
+    .step-item::before { color: var(--c-doc); }
+    .tip-box { background: #E9F5FB; border-color: #B8D8EB; border-left-color: var(--c-doc); }
+    .tip-label { color: var(--c-doc); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: var(--c-doc);">文件處理</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Back -->
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">文件處理 Skill</div>
+      <h1 class="skill-title">論文解讀助手</h1>
+      <div class="skill-cmd-display">/paper-reader-skill</div>
+      <p class="skill-hero-desc">
+        以三層解讀法深度解析學術論文的 Skill。第一層以一句話點出核心貢獻；第二層結構化拆解研究問題、方法、實驗與結論；第三層提取可複用的知識卡片。無論是 CS 論文、自然科學報告還是社科研究，都能在短時間內掌握精髓。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/paper-reader-skill</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">文件處理</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">解讀層次</div>
+          <div class="info-value">3 層</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">適用類型</div>
+          <div class="info-value">CS / 自然科學 / 社科</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Read、pdf</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">需要快速理解一篇陌生領域的論文，但沒有時間逐字閱讀全文</li>
+          <li class="use-item">文獻回顧階段需要批次整理多篇論文的核心貢獻與方法差異</li>
+          <li class="use-item">閱讀頂級會議論文（如 NeurIPS、CVPR、ICLR），想快速判斷是否值得深入研究</li>
+          <li class="use-item">需要將論文中的關鍵方法、公式或結論整理成可複用的筆記卡片</li>
+          <li class="use-item">跨領域研究時，需要以外行人視角理解專業術語密集的技術報告或白皮書</li>
+        </ul>
+      </div>
+
+      <!-- 使用步驟 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">輸入 /paper-reader-skill 並提供論文</div>
+              <div class="step-desc">在對話中輸入 /paper-reader-skill，接著提供 PDF 檔案路徑，或直接貼上論文的 Abstract 與關鍵段落文字。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 執行第一層：一句話摘要</div>
+              <div class="step-desc">Skill 首先輸出一句話核心貢獻，說明這篇論文「用什麼方法、解決什麼問題、達到什麼效果」，讓你在 10 秒內判斷論文方向。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">第二層：結構化拆解四大要素</div>
+              <div class="step-desc">依序輸出「研究問題」「方法設計」「實驗設置與結果」「主要結論與限制」四個區塊，每個區塊以條列方式呈現，便於快速掃讀。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">第三層：提取可複用知識卡片</div>
+              <div class="step-desc">Skill 從論文中萃取 3-5 張知識卡片，每張包含「概念名稱」「一句話定義」「適用場景」，可直接複製用於筆記或後續研究。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例 1：解讀本地 PDF 論文</div>
+          <div class="code-content">
+<span class="hl">/paper-reader-skill</span>
+<span class="dim">論文路徑：./papers/attention-is-all-you-need.pdf</span>
+<span class="dim">請用繁體中文完成三層解讀，並特別說明</span>
+<span class="dim">Self-Attention 機制的核心原理</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 2：從 Abstract 快速判斷論文價值</div>
+          <div class="code-content">
+<span class="hl">/paper-reader-skill</span>
+<span class="dim">以下是論文 Abstract，請只做第一層摘要，</span>
+<span class="dim">判斷這篇論文與「圖像分割」是否相關：</span>
+<span class="dim">[貼上 Abstract 文字]</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例 3：批次整理多篇論文</div>
+          <div class="code-content">
+<span class="hl">/paper-reader-skill</span>
+<span class="dim">依序讀取 ./survey/ 目錄下的所有 PDF，</span>
+<span class="dim">對每篇論文輸出第一層摘要與 2 張知識卡片，</span>
+<span class="dim">整合為一份 Markdown 文件 ./survey-notes.md</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">長篇論文建議指定頁碼範圍</div>
+          <div class="tip-text">學術論文通常超過 10 頁，建議搭配 /pdf 技巧，先指定「摘要、引言、方法、結論」對應的頁碼範圍，讓 Skill 重點解讀關鍵段落，避免超出 Context 長度上限。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">知識卡片適合二次加工使用</div>
+          <div class="tip-text">第三層輸出的知識卡片為提煉後的結構化筆記，建議複製至 Obsidian、Notion 等筆記工具後，依個人需求補充具體應用案例或與其他卡片建立連結，以發揮最大學習價值。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">PDF 閱讀助手 <code class="related-code">/pdf</code></li>
+          <li class="related-item">Word 文件助手 <code class="related-code">/docx</code></li>
+          <li class="related-item">試算表助手 <code class="related-code">/xlsx</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選 26 款實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/codex:rescue — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #6C3BC5; }
+    .section-label::before { background: #6C3BC5; }
+    .use-item::before { color: #6C3BC5; }
+    .step-item::before { color: #6C3BC5; }
+    .tip-box { background: #F4EFFD; border-color: #CBBDF0; border-left-color: #6C3BC5; }
+    .tip-label { color: #6C3BC5; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #6C3BC5; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">AI 整合開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">AI 整合開發 Skill</div>
+      <h1 class="skill-title">Codex 任務委派</h1>
+      <div class="skill-cmd-display">/codex:rescue</div>
+      <p class="skill-hero-desc">
+        當 Claude Code 在某個任務卡關、繞圈超過三輪、或需要深度程式碼調查時，將任務委派給 Codex 子流程；Codex 以獨立視角重新審視問題，不受既有思路限制；適合「已嘗試多種方法但仍未解決」的困難情境。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #6C3BC5;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/codex:rescue</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">AI 整合開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">委派對象</div>
+          <div class="info-value">Codex 子流程</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">適用情境</div>
+          <div class="info-value">Claude 卡關或繞圈</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Bash</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">Claude 在同一問題上繞圈超過三次，仍無法找到根本原因</li>
+          <li class="use-item">需要對複雜 Bug 進行第二輪獨立診斷，以排除思路盲點</li>
+          <li class="use-item">架構決策需要另一個觀點確認，降低單一視角的偏誤風險</li>
+          <li class="use-item">任務複雜度超出單一對話的合理範圍，需要更深度的調查</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述當前卡關的問題與已嘗試的方法</div>
+              <div class="step-desc">說明目前遇到的問題、已嘗試的所有解法，以及每次嘗試的結果，幫助 Codex 快速掌握現況。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Claude 生成委派給 Codex 的 prompt</div>
+              <div class="step-desc">Claude 將整理問題脈絡並組裝一份完整的 Codex 任務 prompt，包含必要的背景資訊與調查方向。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">Codex 回傳深度調查結果</div>
+              <div class="step-desc">Codex 子流程以獨立視角進行調查，回傳分析報告、根本原因推斷或具體的修正建議。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：委派繞圈的 Bug 調查</div>
+          <div class="code-content">
+<span class="hl">/codex:rescue</span>
+<span class="dim">我在追一個記憶體洩漏問題，</span>
+<span class="dim">已試過 WeakRef、手動 cleanup、</span>
+<span class="dim">檢查 event listener，都沒找到根因，</span>
+<span class="dim">請 Codex 從頭重新調查</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：架構決策第二意見</div>
+          <div class="code-content">
+<span class="hl">/codex:rescue</span>
+<span class="dim">我在考慮用 event sourcing 還是</span>
+<span class="dim">CQRS 處理訂單狀態，已討論兩輪</span>
+<span class="dim">但還是無法確定，請 Codex 給出</span>
+<span class="dim">獨立評估與建議</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">提供完整的嘗試歷程</div>
+          <div class="tip-text">委派時請盡量描述所有已嘗試的解法與結果，避免 Codex 重複相同的調查路徑，讓獨立視角的價值最大化。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">與 /diagnose 的搭配使用</div>
+          <div class="tip-text">建議先用 /diagnose 完整跑完六步驟診斷循環，仍無法解決時再使用 /codex:rescue 進行第二輪深度調查，兩者相輔相成。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">深度除錯診斷 <code class="related-code">/diagnose</code></li>
+          <li class="related-item">Agent 開發指南 <code class="related-code">/agent-development</code></li>
+          <li class="related-item">架構優化分析 <code class="related-code">/improve-codebase-architecture</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

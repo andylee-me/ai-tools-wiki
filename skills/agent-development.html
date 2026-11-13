@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/agent-development — Claude Code Skill 百科</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .section-label { color: #6C3BC5; }
+    .section-label::before { background: #6C3BC5; }
+    .use-item::before { color: #6C3BC5; }
+    .step-item::before { color: #6C3BC5; }
+    .tip-box { background: #F4EFFD; border-color: #CBBDF0; border-left-color: #6C3BC5; }
+    .tip-label { color: #6C3BC5; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="5" height="5" rx="1"/>
+            <rect x="9" y="2" width="5" height="5" rx="1"/>
+            <rect x="2" y="9" width="5" height="5" rx="1"/>
+            <rect x="9" y="9" width="5" height="5" rx="1"/>
+          </svg>
+        </div>
+        <span class="brand-name">Skill <em>百科</em></span>
+      </a>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 返回首頁</a>
+        <span class="nav-badge" style="background: #6C3BC5; color: white; padding: 2px 10px; font-family: var(--font-cond); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;">AI 整合開發</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回 Skill 百科首頁</a>
+    </div>
+  </div>
+
+  <!-- Skill Hero -->
+  <div class="skill-hero">
+    <div>
+      <div class="skill-eyebrow">AI 整合開發 Skill</div>
+      <h1 class="skill-title">Agent 開發指南</h1>
+      <div class="skill-cmd-display">/agent-development</div>
+      <p class="skill-hero-desc">
+        引導建立自訂 Claude Code Agent（子流程）；協助撰寫 Agent 的 frontmatter（description、model、tools）、定義工具清單與使用限制、撰寫清楚的觸發條件描述讓主 Claude 知道何時呼叫；輸出可直接部署的 Agent markdown 檔案。
+      </p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-table-head" style="background: #6C3BC5;">Skill 資訊</div>
+        <div class="info-row">
+          <div class="info-label">指令</div>
+          <div class="info-value" style="font-family: var(--font-mono); font-size: 0.82rem;">/agent-development</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">分類</div>
+          <div class="info-value">AI 整合開發</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">輸出格式</div>
+          <div class="info-value">.md agent 定義檔</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">關鍵欄位</div>
+          <div class="info-value">frontmatter, tools</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">需要工具</div>
+          <div class="info-value">Write</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Body -->
+  <div class="skill-body">
+    <div class="skill-content">
+
+      <!-- 適用時機 -->
+      <div class="detail-section">
+        <h2 class="section-label">適用時機</h2>
+        <ul class="use-list">
+          <li class="use-item">需要專門處理特定任務的子流程，與主流程分離管理</li>
+          <li class="use-item">想並行執行多個獨立任務以提升整體效率</li>
+          <li class="use-item">需要隔離某些高風險操作，讓子流程在受限環境執行</li>
+          <li class="use-item">建立可複用的專業 Agent 庫，供團隊成員共用</li>
+        </ul>
+      </div>
+
+      <!-- 使用方式 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用方式</h2>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div>
+              <div class="step-title">描述 Agent 的職責與使用時機</div>
+              <div class="step-desc">說明這個 Agent 負責什麼任務、何時應該被呼叫，以及需要哪些輸入資訊。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">定義工具清單與限制</div>
+              <div class="step-desc">指定 Agent 可使用的工具集合，以及明確禁止的操作，確保子流程在安全邊界內執行。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">生成 frontmatter 與說明文件</div>
+              <div class="step-desc">Claude 產出完整的 Agent markdown 檔，包含 YAML frontmatter 與清楚的職責說明段落。</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-title">部署至 .claude/agents/ 目錄</div>
+              <div class="step-desc">將生成的 .md 檔存入專案的 .claude/agents/ 目錄，主 Claude 即可識別並在適當時機呼叫它。</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 使用範例 -->
+      <div class="detail-section">
+        <h2 class="section-label">使用範例</h2>
+        <div class="code-block">
+          <div class="code-label">範例：建立程式碼審查 Agent</div>
+          <div class="code-content">
+<span class="hl">/agent-development</span>
+<span class="dim">建立一個專門做程式碼審查的 Agent，</span>
+<span class="dim">只能使用 Read 和 Grep 工具，</span>
+<span class="dim">不可修改任何檔案，</span>
+<span class="dim">在使用者提交 PR 前自動觸發</span>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-label">範例：建立測試執行 Agent</div>
+          <div class="code-content">
+<span class="hl">/agent-development</span>
+<span class="dim">建立測試執行 Agent，使用 Bash 工具，</span>
+<span class="dim">負責執行 pytest 並回報失敗案例，</span>
+<span class="dim">當主流程修改 Python 檔案後呼叫</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="detail-section">
+        <h2 class="section-label">注意事項</h2>
+        <div class="tip-box">
+          <div class="tip-label">description 欄位決定呼叫時機</div>
+          <div class="tip-text">frontmatter 中的 description 是主 Claude 判斷何時委派任務的依據，請用清晰的一句話描述觸發情境，避免過於模糊的說明。</div>
+        </div>
+        <br>
+        <div class="tip-box">
+          <div class="tip-label">工具清單越精簡越好</div>
+          <div class="tip-text">只賦予 Agent 完成任務所需的最少工具集，過多工具會增加 Agent 誤操作的機會，也讓主 Claude 更難預測子流程行為。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="skill-aside">
+      <div class="detail-section">
+        <h2 class="section-label">相關 Skills</h2>
+        <ul class="related-list">
+          <li class="related-item">Skill 開發指南 <code class="related-code">/skill-development</code></li>
+          <li class="related-item">MCP 伺服器整合 <code class="related-code">/mcp-integration</code></li>
+          <li class="related-item">Claude API 開發 <code class="related-code">/claude-api</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Claude Code Skill <em>百科</em></div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">精選實用技能指令</div>
+      </div>
+      <div class="footer-meta">© 2024 Claude Code Skill 百科</div>
+    </div>
+  </footer>
+
+</body>
+</html>

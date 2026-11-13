@@ -328,6 +328,7 @@ a { color: inherit; text-decoration: none; }
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
+  overflow: visible;
 }
 
 /* ── Skill Card ── */
@@ -343,10 +344,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .skill-card:hover {
-  background: #FDFAF6;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 28px rgba(30,26,22,0.13);
-  z-index: 1;
+  background: #FEFDFB;
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(30,26,22,0.18);
+  z-index: 2;
 }
 
 .skill-card.c-doc    { border-top-color: var(--c-doc); }

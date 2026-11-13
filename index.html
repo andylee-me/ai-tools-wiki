@@ -3,209 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="收錄精選生成式 AI 工具，以統一格式介紹用途、優缺點與使用場景，幫助你找到最適合的 AI 生產力利器。">
+  <meta name="description" content="收錄精選生成式 AI 工具，以統一格式介紹用途、優缺點與使用場景。">
   <title>生成式 AI 工具圖鑑</title>
   <link rel="stylesheet" href="styles/main.css">
-  <style>
-    /* 首頁專用補充樣式 */
-    .filter-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 4px 14px;
-      border-radius: 9999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.03);
-      color: #94a3b8;
-      cursor: pointer;
-      transition: all 150ms ease;
-    }
-    .filter-btn:hover,
-    .filter-btn.active {
-      border-color: rgba(124,58,237,0.5);
-      background: rgba(124,58,237,0.1);
-      color: #c4b5fd;
-    }
-    .card-icon-chatgpt   { background: linear-gradient(135deg,#10a37f33,#10a37f11); }
-    .card-icon-claude    { background: linear-gradient(135deg,#cc785c33,#cc785c11); }
-    .card-icon-midjourney{ background: linear-gradient(135deg,#f43f5e33,#f43f5e11); }
-  </style>
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       導覽列
-  ══════════════════════════════════════ -->
+  <!-- ══ Navbar ══ -->
   <header class="navbar" role="banner">
     <div class="navbar-inner">
       <div class="navbar-brand">
-        <div class="navbar-logo" aria-hidden="true">⚡</div>
-        <div>
-          <div class="navbar-title">AI 工具圖鑑</div>
-          <div class="navbar-subtitle">生成式 AI 百科</div>
-        </div>
+        <span class="navbar-wordmark">
+          AI:TOOLS<span class="dim">/INDEX</span>
+          <span class="cursor-blink"></span>
+        </span>
       </div>
       <nav class="navbar-nav" aria-label="主要導覽">
         <a href="index.html">首頁</a>
         <a href="#tools-list">工具列表</a>
-        <span class="navbar-count">3 款工具</span>
+        <span class="navbar-tag">3 工具</span>
       </nav>
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════
-       Hero 區塊
-  ══════════════════════════════════════ -->
+  <!-- ══ Hero ══ -->
   <section class="hero" aria-label="網站介紹">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-      <div class="hero-orb hero-orb-3"></div>
-    </div>
-    <div class="hero-content">
-      <span class="hero-eyebrow">✦ 生成式 AI 工具資料庫</span>
-      <h1>
-        找到最適合你的<br>
-        <span class="gradient-text">生成式 AI 工具</span>
-      </h1>
-      <p class="hero-desc">
-        收錄 3 款主流 AI 工具，以統一格式整理用途、優缺點與實際應用場景，
-        幫助你在眾多 AI 工具中快速做出選擇，提升工作與創作效率。
-      </p>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-num">3</span>
-          <div class="hero-stat-label">收錄工具</div>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">5</span>
-          <div class="hero-stat-label">功能分類</div>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">24+</span>
-          <div class="hero-stat-label">應用場景</div>
-        </div>
+    <div class="hero-label">ls ./generative-ai-tools --format=wiki</div>
+    <h1 class="hero-title">
+      <span class="line-normal">生成式</span>
+      <span class="line-accent">AI 工具</span>
+      <span class="line-outline">圖鑑</span>
+    </h1>
+    <p class="hero-desc">
+      收錄 3 款主流生成式 AI 工具，以統一格式整理用途、優缺點與實際應用場景，
+      幫助你在眾多 AI 工具中快速做出選擇，提升工作與創作效率。
+    </p>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">003</span>
+        <div class="hero-stat-label">收錄工具</div>
+      </div>
+      <div>
+        <span class="hero-stat-num">005</span>
+        <div class="hero-stat-label">功能分類</div>
+      </div>
+      <div>
+        <span class="hero-stat-num">24+</span>
+        <div class="hero-stat-label">應用場景</div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       工具列表
-  ══════════════════════════════════════ -->
+  <!-- ══ Tools ══ -->
   <main id="tools-list">
+    <hr class="section-rule">
+
     <section class="tools-section" aria-label="工具列表">
-      <div class="section-header">
-        <h2 class="section-title">所有工具</h2>
-        <div class="filter-bar" role="group" aria-label="分類篩選">
-          <button class="filter-btn active">全部</button>
-          <button class="filter-btn">文字生成</button>
-          <button class="filter-btn">圖像生成</button>
-          <button class="filter-btn">程式碼助手</button>
-          <button class="filter-btn">多模態</button>
+
+      <div class="section-label-row">
+        <span class="section-label-text">// 所有工具</span>
+        <div class="filter-wrap" role="group" aria-label="分類篩選">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="text">文字生成</button>
+          <button class="filter-btn" data-filter="image">圖像生成</button>
+          <button class="filter-btn" data-filter="code">程式碼助手</button>
+          <button class="filter-btn" data-filter="multimodal">多模態</button>
         </div>
       </div>
 
-      <div class="tools-grid">
+      <div class="tools-list" id="tools-container">
 
-        <!-- ── ChatGPT ── -->
-        <article class="tool-card">
-          <div class="card-header">
-            <div class="card-badges">
-              <span class="category-badge category-text">文字生成</span>
-              <span class="category-badge category-code">程式碼助手</span>
+        <!-- ChatGPT -->
+        <article class="tool-row" data-cats="text code" onclick="location.href='tools/chatgpt.html'">
+          <div class="tool-index">01</div>
+          <div class="tool-main">
+            <div class="tool-name-row">
+              <h3 class="tool-name">ChatGPT</h3>
+              <div class="tool-badges">
+                <span class="badge badge-text">文字生成</span>
+                <span class="badge badge-code">程式碼助手</span>
+              </div>
             </div>
-            <div class="card-icon card-icon-chatgpt" aria-hidden="true">🤖</div>
+            <p class="tool-desc-text">
+              由 OpenAI 開發的對話式 AI，支援多輪對話、程式碼生成、文件撰寫與圖像創作，是目前用戶最廣泛的生成式 AI 助理。
+            </p>
           </div>
-          <h3 class="tool-name">ChatGPT</h3>
-          <p class="tool-desc">
-            由 OpenAI 開發的對話式 AI，支援多輪對話、程式碼生成、文件撰寫與圖像創作，是目前用戶最廣泛的生成式 AI 助理。
-          </p>
-          <a href="tools/chatgpt.html" class="btn-detail">查看詳情 →</a>
+          <a href="tools/chatgpt.html" class="tool-cta" onclick="event.stopPropagation()">
+            查看詳情 <i class="arrow-icon">→</i>
+          </a>
         </article>
 
-        <!-- ── Claude ── -->
-        <article class="tool-card">
-          <div class="card-header">
-            <div class="card-badges">
-              <span class="category-badge category-text">文字生成</span>
-              <span class="category-badge category-multimodal">多模態</span>
+        <!-- Claude -->
+        <article class="tool-row" data-cats="text multimodal" onclick="location.href='tools/claude.html'">
+          <div class="tool-index">02</div>
+          <div class="tool-main">
+            <div class="tool-name-row">
+              <h3 class="tool-name">Claude</h3>
+              <div class="tool-badges">
+                <span class="badge badge-text">文字生成</span>
+                <span class="badge badge-multimodal">多模態</span>
+              </div>
             </div>
-            <div class="card-icon card-icon-claude" aria-hidden="true">🧠</div>
+            <p class="tool-desc-text">
+              由 Anthropic 打造，以安全性與長文脈絡理解（200K tokens）見長，擅長深度文件分析、複雜推理與嚴謹的程式碼審查。
+            </p>
           </div>
-          <h3 class="tool-name">Claude</h3>
-          <p class="tool-desc">
-            由 Anthropic 打造，以安全性與長文脈絡理解（200K tokens）見長，擅長深度文件分析、複雜推理與嚴謹的程式碼審查。
-          </p>
-          <a href="tools/claude.html" class="btn-detail">查看詳情 →</a>
+          <a href="tools/claude.html" class="tool-cta" onclick="event.stopPropagation()">
+            查看詳情 <i class="arrow-icon">→</i>
+          </a>
         </article>
 
-        <!-- ── Midjourney ── -->
-        <article class="tool-card">
-          <div class="card-header">
-            <div class="card-badges">
-              <span class="category-badge category-image">圖像生成</span>
+        <!-- Midjourney -->
+        <article class="tool-row" data-cats="image" onclick="location.href='tools/midjourney.html'">
+          <div class="tool-index">03</div>
+          <div class="tool-main">
+            <div class="tool-name-row">
+              <h3 class="tool-name">Midjourney</h3>
+              <div class="tool-badges">
+                <span class="badge badge-image">圖像生成</span>
+              </div>
             </div>
-            <div class="card-icon card-icon-midjourney" aria-hidden="true">🎨</div>
+            <p class="tool-desc-text">
+              頂尖的文字生圖 AI，以獨特的藝術美感與細膩風格輸出聞名，透過 Discord 或 Web 介面即可輸入文字描述生成精緻圖像。
+            </p>
           </div>
-          <h3 class="tool-name">Midjourney</h3>
-          <p class="tool-desc">
-            頂尖的文字生圖 AI，以其獨特的藝術美感與細膩風格輸出聞名，透過 Discord 或 Web 介面即可輸入文字描述生成精緻圖像。
-          </p>
-          <a href="tools/midjourney.html" class="btn-detail">查看詳情 →</a>
+          <a href="tools/midjourney.html" class="tool-cta" onclick="event.stopPropagation()">
+            查看詳情 <i class="arrow-icon">→</i>
+          </a>
         </article>
 
-      </div><!-- /.tools-grid -->
+      </div>
     </section>
   </main>
 
-  <!-- ══════════════════════════════════════
-       Footer
-  ══════════════════════════════════════ -->
-  <footer role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span aria-hidden="true">⚡</span> 生成式 AI 工具圖鑑
-      </div>
-      <p class="footer-desc">
-        本網站為靜態學習資源，以統一格式收錄各類生成式 AI 工具資訊，
-        幫助使用者做出更明智的工具選擇。
-      </p>
-      <p class="footer-copy">© 2024 生成式 AI 工具圖鑑 · 純靜態網站 · 適合 GitHub Pages 部署</p>
+  <!-- ══ Footer ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-brand">
+      <strong>生成式 AI 工具圖鑑</strong>
+      靜態學習資源 · GitHub Pages 部署
+    </div>
+    <div class="footer-copy">
+      © 2024 生成式 AI 工具圖鑑<br>
+      AI:TOOLS/INDEX v1.0
     </div>
   </footer>
 
   <script>
-    // 分類篩選（簡易 vanilla JS）
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.tool-card');
+    const btns = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('.tool-row');
 
-    const categoryMap = {
-      '文字生成':  'category-text',
-      '圖像生成':  'category-image',
-      '程式碼助手': 'category-code',
-      '多模態':    'category-multimodal',
-    };
-
-    filterBtns.forEach(btn => {
+    btns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        btns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const filter = btn.textContent.trim();
-
-        cards.forEach(card => {
-          if (filter === '全部') {
-            card.style.display = '';
-            return;
-          }
-          const cls = categoryMap[filter];
-          const hasBadge = cls ? card.querySelector('.' + cls) !== null : false;
-          card.style.display = hasBadge ? '' : 'none';
+        const f = btn.dataset.filter;
+        rows.forEach(row => {
+          const cats = row.dataset.cats ? row.dataset.cats.split(' ') : [];
+          row.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
         });
       });
     });

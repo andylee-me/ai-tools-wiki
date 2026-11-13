@@ -3,331 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ChatGPT 詳細介紹：由 OpenAI 開發的頂尖對話式 AI，支援文字生成、程式碼輔助、圖像創作等多種功能。">
   <title>ChatGPT — 生成式 AI 工具圖鑑</title>
   <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       導覽列
-  ══════════════════════════════════════ -->
-  <header class="navbar" role="banner">
+  <!-- ══ Navbar ══ -->
+  <header class="navbar">
     <div class="navbar-inner">
       <div class="navbar-brand">
-        <div class="navbar-logo" aria-hidden="true">⚡</div>
-        <div>
-          <div class="navbar-title">AI 工具圖鑑</div>
-          <div class="navbar-subtitle">生成式 AI 百科</div>
-        </div>
+        <span class="navbar-wordmark">AI:TOOLS<span class="dim">/INDEX</span></span>
       </div>
-      <nav class="navbar-nav" aria-label="主要導覽">
-        <a href="../index.html">首頁</a>
-        <a href="../index.html#tools-list">工具列表</a>
-        <span class="navbar-count">3 款工具</span>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 首頁</a>
+        <span class="navbar-tag">文字生成</span>
       </nav>
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════
-       Hero 區塊
-  ══════════════════════════════════════ -->
-  <section class="tool-hero" aria-label="ChatGPT 介紹">
-    <div class="tool-hero-bg" aria-hidden="true">
-      <div class="tool-hero-orb tool-hero-orb-1" style="background: radial-gradient(circle, #10a37f, transparent 70%);"></div>
-      <div class="tool-hero-orb tool-hero-orb-2"></div>
+  <!-- ══ Back ══ -->
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回首頁</a>
     </div>
-    <div class="tool-hero-content">
+  </div>
+
+  <!-- ══ Tool Hero ══ -->
+  <div class="tool-hero">
+    <div>
+      <div class="tool-hero-eyebrow">AI:TOOLS / 001 / OpenAI</div>
+      <h1 class="tool-hero-name">ChatGPT</h1>
       <div class="tool-hero-badges">
-        <span class="category-badge category-text">文字生成</span>
-        <span class="category-badge category-code">程式碼助手</span>
-        <span class="category-badge category-multimodal">多模態</span>
+        <span class="badge badge-text">文字生成</span>
+        <span class="badge badge-code">程式碼助手</span>
       </div>
-      <h1>ChatGPT</h1>
       <p class="tool-hero-tagline">
-        全球用戶最廣泛的對話式 AI，由 OpenAI 開發，支援自然語言對話、程式碼生成、圖像創作與即時搜尋，是現代知識工作者不可或缺的 AI 助理。
+        由 OpenAI 開發，全球用戶最廣泛的生成式 AI 助理。支援多輪對話、程式碼分析、圖像生成與即時搜尋，是進入 AI 領域的入門首選。
       </p>
     </div>
-  </section>
+    <div class="tool-hero-side">
+      <div><span class="accent">開發商</span> · OpenAI</div>
+      <div><span class="accent">發布</span> · 2022</div>
+      <div><span class="accent">版本</span> · GPT-4o</div>
+      <div><span class="accent">平台</span> · Web / iOS / Android</div>
+    </div>
+  </div>
 
-  <!-- ══════════════════════════════════════
-       主要內容
-  ══════════════════════════════════════ -->
-  <div class="tool-content">
+  <!-- ══ Tool Body ══ -->
+  <div class="tool-body">
 
-    <!-- ── 主欄 ── -->
-    <div class="tool-main">
+    <!-- Main Content -->
+    <div class="tool-content">
 
-      <!-- 1. 基本資訊 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">📋</span> 基本資訊
-        </h2>
-        <table class="info-table">
-          <tbody>
-            <tr>
-              <td class="info-label">開發商</td>
-              <td class="info-value">OpenAI</td>
-            </tr>
-            <tr>
-              <td class="info-label">發布年份</td>
-              <td class="info-value">2022 年（GPT-3.5）/ 2023 年（GPT-4）</td>
-            </tr>
-            <tr>
-              <td class="info-label">定價模式</td>
-              <td class="info-value">
-                免費版（GPT-4o mini）/ ChatGPT Plus 訂閱制（GPT-4o，$20/月）/ ChatGPT Pro（$200/月）
-              </td>
-            </tr>
-            <tr>
-              <td class="info-label">適用平台</td>
-              <td class="info-value">Web 瀏覽器、iOS、Android、API（開發者整合）</td>
-            </tr>
-            <tr>
-              <td class="info-label">支援語言</td>
-              <td class="info-value">多語言（包含繁體中文）</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 2. 核心功能 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">⚙️</span> 核心功能
-        </h2>
+      <!-- Core Features -->
+      <div class="content-section">
+        <h2 class="section-heading">核心功能</h2>
         <ul class="feature-list">
           <li class="feature-item">
-            <div class="feature-icon">💬</div>
-            <div class="feature-text">
-              <div class="feature-name">自然語言對話</div>
-              <div class="feature-desc">支援多輪連續對話，能記住上下文脈絡，提供流暢的問答、討論與腦力激盪體驗，適合各種開放式探索與知識查詢。</div>
+            <span class="feature-num">01</span>
+            <div>
+              <div class="feature-title">自然語言對話</div>
+              <div class="feature-desc">支援多輪連續對話，能夠記憶上下文，進行深度追問與討論，模擬人類自然溝通模式。對話歷史可保存與繼續使用。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">💻</div>
-            <div class="feature-text">
-              <div class="feature-name">程式碼生成與除錯</div>
-              <div class="feature-desc">支援 Python、JavaScript、TypeScript、Go、Rust 等主流語言，能生成、解釋、重構程式碼，並提供詳細的除錯建議。</div>
+            <span class="feature-num">02</span>
+            <div>
+              <div class="feature-title">程式碼生成與除錯</div>
+              <div class="feature-desc">支援 50+ 種程式語言，可生成、解釋、重構與除錯程式碼。能夠逐行說明邏輯，適合初學者與資深工程師。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">📝</div>
-            <div class="feature-text">
-              <div class="feature-name">文件撰寫與編輯</div>
-              <div class="feature-desc">可協助撰寫報告、電子郵件、行銷文案、學術摘要、劇本等多種文體，並根據指定風格與語氣調整輸出。</div>
+            <span class="feature-num">03</span>
+            <div>
+              <div class="feature-title">文件撰寫與編輯</div>
+              <div class="feature-desc">能夠撰寫報告、文案、Email、論文摘要，並針對語氣、結構提供具體修改建議，支援多種寫作風格調整。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">📊</div>
-            <div class="feature-text">
-              <div class="feature-name">資料分析（Advanced Data Analysis）</div>
-              <div class="feature-desc">Plus 用戶可上傳 CSV、Excel 等檔案，讓 ChatGPT 執行 Python 分析、繪製圖表，並以自然語言解讀資料趨勢。</div>
+            <span class="feature-num">04</span>
+            <div>
+              <div class="feature-title">資料分析（Code Interpreter）</div>
+              <div class="feature-desc">透過 Code Interpreter 功能，可上傳 CSV / Excel 檔案進行資料分析、繪製圖表，並以自然語言解讀結果。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">🖼️</div>
-            <div class="feature-text">
-              <div class="feature-name">圖像生成（DALL-E 整合）</div>
-              <div class="feature-desc">透過整合 DALL-E 3，使用者可在對話中直接輸入描述生成圖像，支援精細的構圖與風格控制。</div>
+            <span class="feature-num">05</span>
+            <div>
+              <div class="feature-title">圖像生成（DALL-E 整合）</div>
+              <div class="feature-desc">整合 DALL-E 3，可透過文字描述直接在對話中生成高品質圖像，支援多種風格、比例與細節調整。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">🔍</div>
-            <div class="feature-text">
-              <div class="feature-name">即時網路搜尋</div>
-              <div class="feature-desc">ChatGPT 可聯網搜尋最新資訊，突破訓練資料截止日期的限制，提供即時的新聞、股價、天氣等資料查詢。</div>
+            <span class="feature-num">06</span>
+            <div>
+              <div class="feature-title">即時網路搜尋</div>
+              <div class="feature-desc">ChatGPT Plus 用戶可啟用即時搜尋，取得最新資訊，不受知識截止日期限制，並提供來源引用。</div>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- 3. 優缺點 -->
-      <div>
-        <h2 class="block-title" style="color: var(--color-text-heading); font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span>⚖️</span> 優點與缺點
-        </h2>
-        <div class="pros-cons-grid">
-          <div class="pros-block">
-            <div class="pros-title">✓ 優點</div>
+      <!-- Pros & Cons -->
+      <div class="content-section">
+        <h2 class="section-heading">優缺點分析</h2>
+        <div class="pros-cons">
+          <div>
+            <div class="pros-label">優點</div>
             <ul class="pros-list">
-              <li class="pros-item">生態系完整，插件（GPTs）市集提供大量第三方擴充功能</li>
-              <li class="pros-item">多模態能力強，同時支援文字、圖像輸入與生成</li>
-              <li class="pros-item">即時聯網搜尋，資訊不受知識截止日期限制</li>
-              <li class="pros-item">行動 App 體驗佳，iOS / Android 皆有完整功能</li>
-              <li class="pros-item">API 文件完善，開發者社群龐大，整合資源豐富</li>
+              <li class="pro-item">生態系統完整，GPT Store 外掛豐富</li>
+              <li class="pro-item">免費版即可使用，入門門檻低</li>
+              <li class="pro-item">多模態支援完整（文字、圖像、語音）</li>
+              <li class="pro-item">Code Interpreter 資料分析強大</li>
+              <li class="pro-item">社群資源豐富，學習資料充足</li>
             </ul>
           </div>
-          <div class="cons-block">
-            <div class="cons-title">✗ 缺點</div>
+          <div>
+            <div class="cons-label">缺點</div>
             <ul class="cons-list">
-              <li class="cons-item">免費版有使用次數限制，尖峰時段可能需排隊</li>
-              <li class="cons-item">Context Window 相對 Claude 較短（GPT-4o 約 128K tokens）</li>
-              <li class="cons-item">偶爾出現「幻覺」，對事實性問題需自行查證</li>
-              <li class="cons-item">高級功能（如 Advanced Data Analysis）須訂閱 Plus 方案</li>
+              <li class="con-item">免費版有使用次數限制，高峰期常降速</li>
+              <li class="con-item">Context Window 相對較短（128K tokens）</li>
+              <li class="con-item">偶爾出現「幻覺」，需人工驗證關鍵資訊</li>
+              <li class="con-item">隱私政策較複雜，企業用戶需審慎評估</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- 4. 適合對象 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">👥</span> 適合對象
-        </h2>
-        <ul class="audience-list">
-          <li class="audience-item">
-            <span class="audience-emoji">👨‍💻</span>
-            <div class="audience-text">
-              <h4>軟體開發者與工程師</h4>
-              <p>ChatGPT 能快速生成樣板程式碼、解釋複雜演算法、協助除錯，並針對特定框架（如 React、Django）提供最佳實踐建議，大幅縮短開發週期。</p>
+      <!-- Use Cases -->
+      <div class="content-section">
+        <h2 class="section-heading">實際應用場景</h2>
+        <ul class="case-list">
+          <li class="case-item">
+            <div class="case-num">01</div>
+            <div>
+              <div class="case-title">學術寫作輔助</div>
+              <div class="case-desc">研究生可將論文草稿貼入，請 ChatGPT 協助潤稿、改善論點架構或生成摘要與關鍵字。最終內容仍須由作者負責確認準確性。</div>
             </div>
           </li>
-          <li class="audience-item">
-            <span class="audience-emoji">✍️</span>
-            <div class="audience-text">
-              <h4>內容創作者與行銷人員</h4>
-              <p>無論是撰寫部落格文章、社群媒體文案、廣告標語還是電子報，ChatGPT 都能在短時間內提供多個版本供選擇，並配合品牌語氣調整風格。</p>
+          <li class="case-item">
+            <div class="case-num">02</div>
+            <div>
+              <div class="case-title">程式除錯與學習</div>
+              <div class="case-desc">初學者可將報錯訊息貼入，取得詳細的錯誤原因說明與修正方案，並追問「為什麼這樣寫」進行深度學習，降低學習曲線。</div>
             </div>
           </li>
-          <li class="audience-item">
-            <span class="audience-emoji">📚</span>
-            <div class="audience-text">
-              <h4>學生與研究人員</h4>
-              <p>適合用於整理文獻概念、解釋學術術語、協助撰寫研究摘要或報告架構。搭配即時搜尋功能可快速掌握最新研究趨勢，但仍須注意查證資料來源。</p>
+          <li class="case-item">
+            <div class="case-num">03</div>
+            <div>
+              <div class="case-title">商業文案產出</div>
+              <div class="case-desc">行銷人員提供產品資訊，讓 ChatGPT 生成多個版本的廣告文案與 Email 草稿，快速進行 A/B 測試內容比對，再進行人工優化。</div>
             </div>
           </li>
-          <li class="audience-item">
-            <span class="audience-emoji">💼</span>
-            <div class="audience-text">
-              <h4>商務與管理人員</h4>
-              <p>可協助準備會議摘要、撰寫提案書、分析商業資料、翻譯跨語言文件，提升日常辦公室工作的效率，尤其適合需要快速產出文件的場景。</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 5. 實際應用場景 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">🚀</span> 實際應用場景
-        </h2>
-        <ul class="scenario-list">
-          <li class="scenario-item">
-            <div class="scenario-title">🛠️ 自動化程式碼審查</div>
-            <div class="scenario-desc">
-              開發者將 Pull Request 的 diff 貼入 ChatGPT，請它指出潛在的 bug、效能瓶頸與安全性風險，並建議重構方向。搭配 API 可整合至 CI/CD 流程，實現自動化初步審查。
-            </div>
-          </li>
-          <li class="scenario-item">
-            <div class="scenario-title">📊 銷售數據快速分析</div>
-            <div class="scenario-desc">
-              行銷人員上傳月度銷售 CSV 至 Advanced Data Analysis，透過自然語言詢問「哪個產品類別成長最快？」，ChatGPT 自動執行 Python 分析並以視覺化圖表呈現，省去繁瑣的 Excel 操作。
-            </div>
-          </li>
-          <li class="scenario-item">
-            <div class="scenario-title">🌍 多語言客服回覆撰寫</div>
-            <div class="scenario-desc">
-              客服團隊在處理英文客訴後，將回覆草稿貼入 ChatGPT 請它翻譯成日文、韓文、西班牙文，同時確保語氣保持專業友善，大幅降低多語言客服的人力需求。
-            </div>
-          </li>
-          <li class="scenario-item">
-            <div class="scenario-title">🎓 課程教材個人化</div>
-            <div class="scenario-desc">
-              教師描述課程主題與學生程度，請 ChatGPT 生成測驗題目、解題詳解與教學案例。結合自定義 GPTs 可建立專屬教學助理，讓學生反覆練習特定概念。
+          <li class="case-item">
+            <div class="case-num">04</div>
+            <div>
+              <div class="case-title">資料視覺化分析</div>
+              <div class="case-desc">上傳銷售 CSV 資料，請 ChatGPT 透過 Code Interpreter 自動繪製趨勢圖、計算統計指標，快速生成可讀性高的分析報告。</div>
             </div>
           </li>
         </ul>
       </div>
 
-    </div><!-- /.tool-main -->
-
-    <!-- ── 側邊欄 ── -->
-    <aside class="tool-sidebar" aria-label="工具評分">
-
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">能力評分</div>
-        <div class="rating-row">
-          <span class="rating-label">文字生成</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:95%"></div></div>
-          <span class="rating-num">9.5</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">程式碼</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:92%"></div></div>
-          <span class="rating-num">9.2</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">圖像生成</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:80%"></div></div>
-          <span class="rating-num">8.0</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">資料分析</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:88%"></div></div>
-          <span class="rating-num">8.8</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">易用程度</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:97%"></div></div>
-          <span class="rating-num">9.7</span>
-        </div>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">定價快覽</div>
-        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
-          <div style="padding:0.75rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;">
-            <div style="font-size:0.8rem;font-weight:700;color:#94a3b8;margin-bottom:4px;">免費版</div>
-            <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;">$0 / 月</div>
-            <div style="font-size:0.78rem;color:#64748b;margin-top:2px;">GPT-4o mini，有使用限制</div>
+      <!-- Audience -->
+      <div class="content-section">
+        <h2 class="section-heading">適合對象</h2>
+        <div class="audience-grid">
+          <div class="audience-item">
+            <div class="audience-role">學生 / 研究者</div>
+            <div class="audience-desc">需要快速取得資訊、輔助寫作與整理知識，可大幅縮短資料蒐集時間。</div>
           </div>
-          <div style="padding:0.75rem;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.25);border-radius:8px;">
-            <div style="font-size:0.8rem;font-weight:700;color:#a78bfa;margin-bottom:4px;">Plus</div>
-            <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;">$20 / 月</div>
-            <div style="font-size:0.78rem;color:#64748b;margin-top:2px;">GPT-4o、DALL-E、聯網搜尋</div>
+          <div class="audience-item">
+            <div class="audience-role">軟體開發者</div>
+            <div class="audience-desc">程式碼生成與除錯功能完整，支援多語言，適合各技術層級的工程師日常使用。</div>
           </div>
-          <div style="padding:0.75rem;background:rgba(6,182,212,0.06);border:1px solid rgba(6,182,212,0.2);border-radius:8px;">
-            <div style="font-size:0.8rem;font-weight:700;color:#22d3ee;margin-bottom:4px;">Pro</div>
-            <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;">$200 / 月</div>
-            <div style="font-size:0.78rem;color:#64748b;margin-top:2px;">o1 Pro、無限制使用</div>
+          <div class="audience-item">
+            <div class="audience-role">行銷 / 內容創作者</div>
+            <div class="audience-desc">文案生成、語氣調整、多版本 A/B 測試，大幅提升內容產出效率。</div>
+          </div>
+          <div class="audience-item">
+            <div class="audience-role">AI 工具新手</div>
+            <div class="audience-desc">介面直覺、免費版門檻低，是進入生成式 AI 領域的最佳第一款工具。</div>
           </div>
         </div>
       </div>
 
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">標籤</div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;">
-          <span class="category-badge category-text">文字生成</span>
-          <span class="category-badge category-code">程式碼助手</span>
-          <span class="category-badge category-multimodal">多模態</span>
+    </div><!-- /.tool-content -->
+
+    <!-- Sidebar -->
+    <aside class="info-panel">
+      <div class="info-table">
+        <div class="info-table-head">基本資訊</div>
+        <div class="info-row">
+          <div class="info-label">開發商</div>
+          <div class="info-value">OpenAI</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">發布年份</div>
+          <div class="info-value">2022</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">定價</div>
+          <div class="info-value">免費 / Plus $20/月</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">平台</div>
+          <div class="info-value">Web · iOS · Android · API</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Context</div>
+          <div class="info-value">128K tokens</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">最新版本</div>
+          <div class="info-value">GPT-4o</div>
         </div>
       </div>
 
-    </aside><!-- /.tool-sidebar -->
-
-  </div><!-- /.tool-content -->
-
-  <!-- ══════════════════════════════════════
-       底部導覽
-  ══════════════════════════════════════ -->
-  <nav class="back-nav" aria-label="頁面導覽">
-    <a href="../index.html" class="btn-back">← 返回首頁</a>
-  </nav>
-
-  <!-- ══════════════════════════════════════
-       Footer
-  ══════════════════════════════════════ -->
-  <footer role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span aria-hidden="true">⚡</span> 生成式 AI 工具圖鑑
+      <div class="aside-badges">
+        <div class="aside-badges-label">功能分類</div>
+        <div class="aside-badges-list">
+          <span class="badge badge-text">文字生成</span>
+          <span class="badge badge-code">程式碼助手</span>
+        </div>
       </div>
-      <p class="footer-desc">
-        本網站為靜態學習資源，以統一格式收錄各類生成式 AI 工具資訊，
-        幫助使用者做出更明智的工具選擇。
-      </p>
-      <p class="footer-copy">© 2024 生成式 AI 工具圖鑑 · 純靜態網站</p>
+    </aside>
+
+  </div><!-- /.tool-body -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <strong>生成式 AI 工具圖鑑</strong>
+      靜態學習資源 · GitHub Pages 部署
+    </div>
+    <div class="footer-copy">
+      © 2024 · 純靜態網站<br>
+      AI:TOOLS/001 ChatGPT
     </div>
   </footer>
 

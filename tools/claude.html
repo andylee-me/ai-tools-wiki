@@ -3,349 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Claude 詳細介紹：由 Anthropic 開發，以安全性與 200K tokens 長脈絡理解著稱的生成式 AI 助理。">
   <title>Claude — 生成式 AI 工具圖鑑</title>
   <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       導覽列
-  ══════════════════════════════════════ -->
-  <header class="navbar" role="banner">
+  <!-- ══ Navbar ══ -->
+  <header class="navbar">
     <div class="navbar-inner">
       <div class="navbar-brand">
-        <div class="navbar-logo" aria-hidden="true">⚡</div>
-        <div>
-          <div class="navbar-title">AI 工具圖鑑</div>
-          <div class="navbar-subtitle">生成式 AI 百科</div>
-        </div>
+        <span class="navbar-wordmark">AI:TOOLS<span class="dim">/INDEX</span></span>
       </div>
-      <nav class="navbar-nav" aria-label="主要導覽">
-        <a href="../index.html">首頁</a>
-        <a href="../index.html#tools-list">工具列表</a>
-        <span class="navbar-count">3 款工具</span>
+      <nav class="navbar-nav">
+        <a href="../index.html">← 首頁</a>
+        <span class="navbar-tag">多模態</span>
       </nav>
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════
-       Hero 區塊
-  ══════════════════════════════════════ -->
-  <section class="tool-hero" aria-label="Claude 介紹">
-    <div class="tool-hero-bg" aria-hidden="true">
-      <div class="tool-hero-orb tool-hero-orb-1" style="background: radial-gradient(circle, #cc785c, transparent 70%);"></div>
-      <div class="tool-hero-orb tool-hero-orb-2" style="background: radial-gradient(circle, #7c3aed, transparent 70%);"></div>
+  <!-- ══ Back ══ -->
+  <div class="back-bar">
+    <div class="back-bar-inner">
+      <a href="../index.html" class="back-link">← 返回首頁</a>
     </div>
-    <div class="tool-hero-content">
+  </div>
+
+  <!-- ══ Tool Hero ══ -->
+  <div class="tool-hero">
+    <div>
+      <div class="tool-hero-eyebrow">AI:TOOLS / 002 / Anthropic</div>
+      <h1 class="tool-hero-name">Claude</h1>
       <div class="tool-hero-badges">
-        <span class="category-badge category-text">文字生成</span>
-        <span class="category-badge category-multimodal">多模態</span>
-        <span class="category-badge category-code">程式碼助手</span>
+        <span class="badge badge-text">文字生成</span>
+        <span class="badge badge-multimodal">多模態</span>
       </div>
-      <h1>Claude</h1>
       <p class="tool-hero-tagline">
-        由 Anthropic 打造，以安全性、可解釋性與超長脈絡理解（200K tokens）著稱。擅長深度文件分析、複雜推理與嚴謹的程式碼審查，是注重準確性與安全性使用者的首選。
+        由 Anthropic 打造，以 Constitutional AI 安全框架與超長文脈絡理解（200K tokens）聞名，擅長深度文件分析、複雜推理與嚴謹的程式碼審查。
       </p>
     </div>
-  </section>
+    <div class="tool-hero-side">
+      <div><span class="accent">開發商</span> · Anthropic</div>
+      <div><span class="accent">發布</span> · 2023</div>
+      <div><span class="accent">版本</span> · Claude 3.5</div>
+      <div><span class="accent">平台</span> · Web / API / IDE</div>
+    </div>
+  </div>
 
-  <!-- ══════════════════════════════════════
-       主要內容
-  ══════════════════════════════════════ -->
-  <div class="tool-content">
+  <!-- ══ Tool Body ══ -->
+  <div class="tool-body">
 
-    <!-- ── 主欄 ── -->
-    <div class="tool-main">
+    <!-- Main Content -->
+    <div class="tool-content">
 
-      <!-- 1. 基本資訊 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">📋</span> 基本資訊
-        </h2>
-        <table class="info-table">
-          <tbody>
-            <tr>
-              <td class="info-label">開發商</td>
-              <td class="info-value">Anthropic</td>
-            </tr>
-            <tr>
-              <td class="info-label">發布年份</td>
-              <td class="info-value">2023 年（Claude 1）/ 2024 年（Claude 3 系列、Claude 3.5 Sonnet）</td>
-            </tr>
-            <tr>
-              <td class="info-label">定價模式</td>
-              <td class="info-value">
-                免費版（Claude 3.5 Haiku，有限制）/ Claude Pro 訂閱制（$20/月）/ API 按量計費
-              </td>
-            </tr>
-            <tr>
-              <td class="info-label">適用平台</td>
-              <td class="info-value">Web 瀏覽器、API、VS Code 整合、Cursor 整合、各主流 IDE 插件</td>
-            </tr>
-            <tr>
-              <td class="info-label">Context Window</td>
-              <td class="info-value">200,000 tokens（業界最長之一）</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 2. 核心功能 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">⚙️</span> 核心功能
-        </h2>
+      <!-- Core Features -->
+      <div class="content-section">
+        <h2 class="section-heading">核心功能</h2>
         <ul class="feature-list">
           <li class="feature-item">
-            <div class="feature-icon">📄</div>
-            <div class="feature-text">
-              <div class="feature-name">超長文脈絡理解（200K tokens）</div>
-              <div class="feature-desc">可一次性讀取並分析長達約 150,000 字的文件，相當於一本厚實的書籍。適合處理法律合約、學術論文、完整程式碼庫等大型文件，無需人工分段截取。</div>
+            <span class="feature-num">01</span>
+            <div>
+              <div class="feature-title">超長文脈絡理解（200K tokens）</div>
+              <div class="feature-desc">業界最長的 Context Window 之一，可一次讀入整本書、完整程式碼庫或大型法律文件，進行跨段落的深度分析與問答。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">🔍</div>
-            <div class="feature-text">
-              <div class="feature-name">深度文件閱讀與摘要</div>
-              <div class="feature-desc">支援上傳 PDF、Word、文字檔等格式，Claude 能精確提取關鍵資訊、比較多份文件差異，並以結構化方式呈現摘要，適合大量文件審閱工作。</div>
+            <span class="feature-num">02</span>
+            <div>
+              <div class="feature-title">Constitutional AI 安全設計</div>
+              <div class="feature-desc">採用 Anthropic 自研的 Constitutional AI 框架訓練，對有害指令具有更強的拒絕能力，更符合企業合規需求。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">🛡️</div>
-            <div class="feature-text">
-              <div class="feature-name">安全性優先設計（Constitutional AI）</div>
-              <div class="feature-desc">Anthropic 以 Constitutional AI（憲法式 AI）訓練方法，讓 Claude 在面對有害請求時能以明確原則拒絕，同時維持高度的幫助性，減少不必要的過度限制。</div>
+            <span class="feature-num">03</span>
+            <div>
+              <div class="feature-title">程式碼分析與撰寫</div>
+              <div class="feature-desc">具備優秀的程式碼理解能力，擅長解析大型程式碼庫、撰寫測試、進行 Code Review，並解釋複雜邏輯。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">💻</div>
-            <div class="feature-text">
-              <div class="feature-name">程式碼分析與生成</div>
-              <div class="feature-desc">支援多種程式語言，特別擅長解釋複雜程式邏輯、進行完整程式碼庫的架構審查，以及生成帶有詳細注釋的高品質程式碼。</div>
+            <span class="feature-num">04</span>
+            <div>
+              <div class="feature-title">文件閱讀與摘要</div>
+              <div class="feature-desc">可直接上傳 PDF、Word 等文件，進行跨文件比對、摘要生成與重點提取，適合處理大量研究資料。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">✍️</div>
-            <div class="feature-text">
-              <div class="feature-name">寫作輔助與風格轉換</div>
-              <div class="feature-desc">能模仿特定寫作風格、調整文章語氣（正式/輕鬆/學術），並提供具體的修改建議而非僅重寫全文，保留原作者的核心觀點。</div>
+            <span class="feature-num">05</span>
+            <div>
+              <div class="feature-title">細膩的寫作輔助</div>
+              <div class="feature-desc">在文章撰寫、語氣調整與結構優化上表現優異，能夠維持一致的寫作風格，適合長篇內容創作。</div>
             </div>
           </li>
           <li class="feature-item">
-            <div class="feature-icon">🧩</div>
-            <div class="feature-text">
-              <div class="feature-name">複雜推理與邏輯分析</div>
-              <div class="feature-desc">在數學推理、邏輯謎題、多步驟問題解決上表現出色，能清晰展示思考過程，適合需要嚴謹推導步驟的學術與工程場景。</div>
+            <span class="feature-num">06</span>
+            <div>
+              <div class="feature-title">多模態理解（圖像輸入）</div>
+              <div class="feature-desc">Claude 3 系列支援圖像輸入，可分析圖表、截圖、設計稿，並以文字形式詳細描述與解讀視覺內容。</div>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- 3. 優缺點 -->
-      <div>
-        <h2 class="block-title" style="color: var(--color-text-heading); font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span>⚖️</span> 優點與缺點
-        </h2>
-        <div class="pros-cons-grid">
-          <div class="pros-block">
-            <div class="pros-title">✓ 優點</div>
+      <!-- Pros & Cons -->
+      <div class="content-section">
+        <h2 class="section-heading">優缺點分析</h2>
+        <div class="pros-cons">
+          <div>
+            <div class="pros-label">優點</div>
             <ul class="pros-list">
-              <li class="pros-item">200K tokens 超長 Context Window，可處理完整書本或大型程式庫</li>
-              <li class="pros-item">Constitutional AI 設計，回覆更安全、更可預測</li>
-              <li class="pros-item">寫作輸出品質高，文章流暢自然，接近人工撰寫水準</li>
-              <li class="pros-item">程式碼解釋詳盡，特別適合學習與教學場景</li>
-              <li class="pros-item">在遵循複雜指令方面表現優異，不易偏離要求</li>
+              <li class="pro-item">200K tokens 超長 Context，處理長文件無壓力</li>
+              <li class="pro-item">安全性設計完善，企業合規需求友善</li>
+              <li class="pro-item">寫作風格細膩，語言表達自然流暢</li>
+              <li class="pro-item">程式碼 Review 能力強，邏輯解釋清晰</li>
+              <li class="pro-item">支援直接上傳文件（PDF、圖片）進行分析</li>
             </ul>
           </div>
-          <div class="cons-block">
-            <div class="cons-title">✗ 缺點</div>
+          <div>
+            <div class="cons-label">缺點</div>
             <ul class="cons-list">
-              <li class="cons-item">目前不支援即時網路搜尋，資訊受訓練資料截止日期限制</li>
-              <li class="cons-item">圖像生成功能尚未整合，無法直接在對話中生圖</li>
-              <li class="cons-item">免費版有每日使用量上限，高負載時可能提示切換至付費版</li>
-              <li class="cons-item">生態系插件數量相對 ChatGPT 較少，第三方整合選項有限</li>
+              <li class="con-item">生態系統與外掛整合不如 ChatGPT 豐富</li>
+              <li class="con-item">免費版限制較多，功能體驗需訂閱</li>
+              <li class="con-item">目前不支援圖像生成（僅支援圖像輸入）</li>
+              <li class="con-item">即時搜尋功能相對薄弱</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- 4. 適合對象 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">👥</span> 適合對象
-        </h2>
-        <ul class="audience-list">
-          <li class="audience-item">
-            <span class="audience-emoji">⚖️</span>
-            <div class="audience-text">
-              <h4>法律與合規專業人員</h4>
-              <p>Claude 的超長 Context Window 使其能一次讀取完整合約文本，精確找出潛在風險條款、比較不同版本差異，並以非法律語言解釋複雜條款，大幅提升合約審查效率。</p>
+      <!-- Use Cases -->
+      <div class="content-section">
+        <h2 class="section-heading">實際應用場景</h2>
+        <ul class="case-list">
+          <li class="case-item">
+            <div class="case-num">01</div>
+            <div>
+              <div class="case-title">長篇研究文件分析</div>
+              <div class="case-desc">研究人員可上傳多份 PDF 論文，讓 Claude 進行跨文件比對、彙整主要論點、找出研究缺口，大幅縮短文獻回顧時間。</div>
             </div>
           </li>
-          <li class="audience-item">
-            <span class="audience-emoji">🔬</span>
-            <div class="audience-text">
-              <h4>研究人員與學術工作者</h4>
-              <p>可一次讀取多篇論文全文並進行跨文獻比較、提取方法論差異，以及協助撰寫具學術風格的摘要與討論段落，適合需要嚴謹引用與邏輯論證的學術寫作場景。</p>
+          <li class="case-item">
+            <div class="case-num">02</div>
+            <div>
+              <div class="case-title">大型程式碼庫 Review</div>
+              <div class="case-desc">工程師可將整個模組的程式碼貼入，請 Claude 進行全面性 Code Review，找出潛在漏洞、效能瓶頸與不符合規範的寫法。</div>
             </div>
           </li>
-          <li class="audience-item">
-            <span class="audience-emoji">👨‍💻</span>
-            <div class="audience-text">
-              <h4>資深軟體工程師</h4>
-              <p>能將整個專案程式庫貼入對話，請 Claude 進行全面的架構審查、識別技術債、提出重構策略，特別適合大型程式庫的遷移規劃與遺留程式碼理解。</p>
+          <li class="case-item">
+            <div class="case-num">03</div>
+            <div>
+              <div class="case-title">合約與法律文件審閱</div>
+              <div class="case-desc">法務或採購人員可上傳完整合約，請 Claude 標記潛在風險條款、比對多份版本差異，作為初步審閱的輔助工具。</div>
             </div>
           </li>
-          <li class="audience-item">
-            <span class="audience-emoji">🏢</span>
-            <div class="audience-text">
-              <h4>企業合規與資料安全團隊</h4>
-              <p>Anthropic 的安全優先設計使 Claude 更適合處理敏感性業務問題，在需要嚴格管控 AI 行為的企業場景中，Constitutional AI 的可預測性帶來更高的信任度。</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 5. 實際應用場景 -->
-      <div class="content-block">
-        <h2 class="block-title">
-          <span class="block-title-icon">🚀</span> 實際應用場景
-        </h2>
-        <ul class="scenario-list">
-          <li class="scenario-item">
-            <div class="scenario-title">📑 大型合約快速審查</div>
-            <div class="scenario-desc">
-              律師事務所將 100 頁的合作協議全文貼入 Claude，請它標記所有不利條款、列出潛在法律風險點，並以一頁摘要呈現關鍵結論。相比傳統人工審閱，時間從數小時縮短至數分鐘。
-            </div>
-          </li>
-          <li class="scenario-item">
-            <div class="scenario-title">🧪 學術論文文獻綜述</div>
-            <div class="scenario-desc">
-              研究生將 10 篇相關領域論文全文上傳，讓 Claude 進行系統性整理，比較各研究的方法論、樣本大小、核心發現與局限性，直接輸出結構化的文獻回顧表格，作為撰寫文獻綜述的起點。
-            </div>
-          </li>
-          <li class="scenario-item">
-            <div class="scenario-title">🏗️ 老舊程式碼庫遷移規劃</div>
-            <div class="scenario-desc">
-              工程團隊將整個 Python 2 程式庫（約 50,000 行）貼入 Claude，請它分析 Python 3 不相容的語法、識別依賴套件更新需求，並生成逐步的遷移計畫與高風險模組清單。
-            </div>
-          </li>
-          <li class="scenario-item">
-            <div class="scenario-title">📰 長篇報告智能摘要</div>
-            <div class="scenario-desc">
-              財務分析師將 200 頁的年度報告貼入 Claude，請它提取關鍵財務指標、管理層風險說明與未來展望，並對比上一年度數據，生成適合董事會閱讀的執行摘要（Executive Summary）。
+          <li class="case-item">
+            <div class="case-num">04</div>
+            <div>
+              <div class="case-title">長篇內容寫作</div>
+              <div class="case-desc">作家或內容創作者提供大綱與風格說明，讓 Claude 協助撰寫維持一致語氣的長篇文章、章節或報告，再逐段進行人工修潤。</div>
             </div>
           </li>
         </ul>
       </div>
 
-    </div><!-- /.tool-main -->
-
-    <!-- ── 側邊欄 ── -->
-    <aside class="tool-sidebar" aria-label="工具評分">
-
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">能力評分</div>
-        <div class="rating-row">
-          <span class="rating-label">文字生成</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:97%"></div></div>
-          <span class="rating-num">9.7</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">程式碼</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:92%"></div></div>
-          <span class="rating-num">9.2</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">長文分析</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:98%"></div></div>
-          <span class="rating-num">9.8</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">安全性</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:98%"></div></div>
-          <span class="rating-num">9.8</span>
-        </div>
-        <div class="rating-row">
-          <span class="rating-label">易用程度</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:90%"></div></div>
-          <span class="rating-num">9.0</span>
-        </div>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">定價快覽</div>
-        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
-          <div style="padding:0.75rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;">
-            <div style="font-size:0.8rem;font-weight:700;color:#94a3b8;margin-bottom:4px;">免費版</div>
-            <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;">$0 / 月</div>
-            <div style="font-size:0.78rem;color:#64748b;margin-top:2px;">Claude 3.5 Haiku，有使用限制</div>
+      <!-- Audience -->
+      <div class="content-section">
+        <h2 class="section-heading">適合對象</h2>
+        <div class="audience-grid">
+          <div class="audience-item">
+            <div class="audience-role">學術研究者</div>
+            <div class="audience-desc">需要處理大量文獻、進行跨文件分析與論點整理，200K Context 是關鍵優勢。</div>
           </div>
-          <div style="padding:0.75rem;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.25);border-radius:8px;">
-            <div style="font-size:0.8rem;font-weight:700;color:#a78bfa;margin-bottom:4px;">Pro</div>
-            <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;">$20 / 月</div>
-            <div style="font-size:0.78rem;color:#64748b;margin-top:2px;">Claude 3.5 Sonnet、優先使用</div>
+          <div class="audience-item">
+            <div class="audience-role">資深工程師</div>
+            <div class="audience-desc">需要對大型程式碼庫進行深度 Review 或重構分析，邏輯推理能力強大。</div>
           </div>
-          <div style="padding:0.75rem;background:rgba(6,182,212,0.06);border:1px solid rgba(6,182,212,0.2);border-radius:8px;">
-            <div style="font-size:0.8rem;font-weight:700;color:#22d3ee;margin-bottom:4px;">API</div>
-            <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;">按量計費</div>
-            <div style="font-size:0.78rem;color:#64748b;margin-top:2px;">依 token 用量計算，企業方案</div>
+          <div class="audience-item">
+            <div class="audience-role">法務 / 合規人員</div>
+            <div class="audience-desc">需要審閱長篇合約或法規文件，Claude 的安全設計與長文理解能力特別適合。</div>
+          </div>
+          <div class="audience-item">
+            <div class="audience-role">長篇內容創作者</div>
+            <div class="audience-desc">書籍、報告、深度文章的撰寫輔助，細膩的語言風格維持能力是一大亮點。</div>
           </div>
         </div>
       </div>
 
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">標籤</div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;">
-          <span class="category-badge category-text">文字生成</span>
-          <span class="category-badge category-multimodal">多模態</span>
-          <span class="category-badge category-code">程式碼助手</span>
+    </div><!-- /.tool-content -->
+
+    <!-- Sidebar -->
+    <aside class="info-panel">
+      <div class="info-table">
+        <div class="info-table-head">基本資訊</div>
+        <div class="info-row">
+          <div class="info-label">開發商</div>
+          <div class="info-value">Anthropic</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">發布年份</div>
+          <div class="info-value">2023</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">定價</div>
+          <div class="info-value">免費 / Pro $20/月</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">平台</div>
+          <div class="info-value">Web · API · IDE 整合</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Context</div>
+          <div class="info-value">200K tokens</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">最新版本</div>
+          <div class="info-value">Claude 3.5 Sonnet</div>
         </div>
       </div>
 
-      <div class="sidebar-card">
-        <div class="sidebar-card-title">技術亮點</div>
-        <ul style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem;">
-          <li style="font-size:0.82rem;color:#cbd5e1;display:flex;align-items:center;gap:0.5rem;">
-            <span style="color:#22d3ee;font-size:0.7rem;">▶</span> 200K tokens Context Window
-          </li>
-          <li style="font-size:0.82rem;color:#cbd5e1;display:flex;align-items:center;gap:0.5rem;">
-            <span style="color:#22d3ee;font-size:0.7rem;">▶</span> Constitutional AI 安全設計
-          </li>
-          <li style="font-size:0.82rem;color:#cbd5e1;display:flex;align-items:center;gap:0.5rem;">
-            <span style="color:#22d3ee;font-size:0.7rem;">▶</span> 多模態圖像理解（Claude 3）
-          </li>
-          <li style="font-size:0.82rem;color:#cbd5e1;display:flex;align-items:center;gap:0.5rem;">
-            <span style="color:#22d3ee;font-size:0.7rem;">▶</span> Artifacts 即時預覽功能
-          </li>
-        </ul>
+      <div class="aside-badges">
+        <div class="aside-badges-label">功能分類</div>
+        <div class="aside-badges-list">
+          <span class="badge badge-text">文字生成</span>
+          <span class="badge badge-multimodal">多模態</span>
+        </div>
       </div>
+    </aside>
 
-    </aside><!-- /.tool-sidebar -->
+  </div><!-- /.tool-body -->
 
-  </div><!-- /.tool-content -->
-
-  <!-- ══════════════════════════════════════
-       底部導覽
-  ══════════════════════════════════════ -->
-  <nav class="back-nav" aria-label="頁面導覽">
-    <a href="../index.html" class="btn-back">← 返回首頁</a>
-  </nav>
-
-  <!-- ══════════════════════════════════════
-       Footer
-  ══════════════════════════════════════ -->
-  <footer role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span aria-hidden="true">⚡</span> 生成式 AI 工具圖鑑
-      </div>
-      <p class="footer-desc">
-        本網站為靜態學習資源，以統一格式收錄各類生成式 AI 工具資訊，
-        幫助使用者做出更明智的工具選擇。
-      </p>
-      <p class="footer-copy">© 2024 生成式 AI 工具圖鑑 · 純靜態網站</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <strong>生成式 AI 工具圖鑑</strong>
+      靜態學習資源 · GitHub Pages 部署
+    </div>
+    <div class="footer-copy">
+      © 2024 · 純靜態網站<br>
+      AI:TOOLS/002 Claude
     </div>
   </footer>
 
